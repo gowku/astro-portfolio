@@ -14,20 +14,20 @@ const projects = (await getCollection('work')).sort(
 ---
 
 <BaseLayout
-	title="My Work | Jeanine White"
-	description="Learn about Jeanine White's most recent projects"
+	title="Projets | Julien Frébet"
+	description="Découvrez mes projets les plus récents pour vous faire une idée de mon expérience passée."
 >
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8">
 			<Hero
-				title="My Work"
-				tagline="See my most recent projects below to get an idea of my past experience."
+				title="Mes projets"
+				tagline="Découvrez mes projets les plus récents ci-dessous pour vous faire une idée de mon expérience passée."
 				align="start"
 			/>
 			<Grid variant="offset">
 				{
-					projects.map((project) => (
-						<li>
+					projects.map((project,i) => (
+						<li class="projects" id=`project${i}`  >
 							<PortfolioPreview project={project} />
 						</li>
 					))
@@ -37,3 +37,27 @@ const projects = (await getCollection('work')).sort(
 		<ContactCTA />
 	</div>
 </BaseLayout>
+
+
+<style>
+
+
+li:nth-child(odd) {
+	animation: fadeInOdd 0.5s cubic-bezier(0.47,0,0.75,0.72) forwards;
+}
+ li:nth-child(even) {
+	transform: translateX(100%);
+} 
+
+
+@keyframes fadeInOdd {
+  0% {
+    opacity: 0;
+	transform: translateX(-100%) translateY(var(--row-offset));
+  }
+  100% {
+    opacity: 1;
+	transform: translateX(0) translateY(var(--row-offset));
+  }
+}
+</style>

@@ -3,24 +3,51 @@ import Icon from './Icon.astro';
 ---
 
 <section class="box skills">
-	<div class="stack gap-2 lg:gap-4">
+	<div class="stack gap-2 lg:gap-4 skill skill1">
 		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Full Stack</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+		<h2>Front-end</h2>
+		<p>Création d'interfaces utilisateur interactives et attrayantes en utilisant des technologies modernes.</p>
 	</div>
-	<div class="stack gap-2 lg:gap-4">
+	<div class="stack gap-2 lg:gap-4 skill skill2" >
 		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Industry Leader</h2>
-		<p>Neque viverra justo nec ultrices dui. Est ultricies integer quis auctor elit.</p>
+		<h2>Responsive design</h2>
+		<p>Sites web qui s'adaptent de manière transparente à différents appareils et tailles d'écran pour offrir une expérience utilisateur cohérente.</p>
 	</div>
-	<div class="stack gap-2 lg:gap-4">
+	<div class="stack gap-2 lg:gap-4 skill skill3" >
 		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Strategy-Minded</h2>
-		<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
+		<h2>Veille tech </h2>
+		<p>Passionné par l'IT, je suis constamment à l'affût des dernières tendances et innovations pour anticiper les changements futurs.</p>
 	</div>
 </section>
 
 <style>
+
+.skill {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.skill1 {
+  animation: fadeIn 0.5s cubic-bezier(0.47,0,0.75,0.72) forwards;
+}
+
+.skill2 {
+  animation: fadeIn 0.5s cubic-bezier(0.47,0,0.75,0.72) 0.3s forwards;
+}
+
+.skill3 {
+  animation: fadeIn 0.5s cubic-bezier(0.47,0,0.75,0.72) 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 	.box {
 		border: 1px solid var(--gray-800);
 		border-radius: 0.75rem;
