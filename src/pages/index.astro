@@ -110,17 +110,17 @@ const projects = (await getCollection('work'))
 <script>
 	function animateListItems() {
 	  const listItems = document.querySelectorAll('.projects');
-	  const delayIndex = 300; 
+	  const delayIndex = 250; 
 	
 	  listItems.forEach((item, index) => {
 		const isOdd = index % 2 === 0;
 	
 		if (item instanceof HTMLElement) {
 		if (isOdd) {
-			item.style.animation = 'fadeInOdd 0.5s cubic-bezier(0.47,0,0.75,0.72) forwards';
+			item.style.animation = 'fadeInOdd 0.5s linear forwards';
 			item.style.animationDelay = `${index * delayIndex}ms`;
 		} else {
-			item.style.animation = 'fadeInEven 0.5s cubic-bezier(0.47,0,0.75,0.72) forwards';
+			item.style.animation = 'fadeInEven 0.5s linear forwards';
 			item.style.animationDelay = `${index * delayIndex}ms`;
 		  }
 		}
