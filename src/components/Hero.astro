@@ -16,23 +16,26 @@ const { align = 'center', tagline, title } = Astro.props;
 	<slot />
 </header>
 
+<!--  Typewriter effect -->
 <script>
-const text = "Bonjour, je suis Julien Frébet"; // The text you want to display
-const delay = 75; // Delay between each character (in milliseconds)
-let index = 0;
+	const myTitle = document.getElementsByClassName("title")[0].textContent;
+	const delay = 75; 
+	document.getElementsByClassName("title")[0].textContent = "";
 
-function typeWriter() {
-  if (index < text.length) {
-    document.getElementsByClassName("title")[0].textContent += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, delay);
-  }
+	if (myTitle){
+	for (const letters of myTitle) {
+		const span = document.createElement("span")
+		span.textContent = letters
+		span.style.opacity = "0";
+		document.getElementsByClassName("title")[0].appendChild(span);
+	}
+	const spans = document.getElementsByClassName("title")[0].getElementsByTagName("span");
+
+	for (const span of spans) {
+		span.style.opacity = "1";
+		await new Promise(r => setTimeout(r, delay));
+	}
 }
-
-// Start the typewriter effect
-typeWriter();
-
-
 </script>
 
 <style>
@@ -50,15 +53,7 @@ typeWriter();
 	.title {
 		font-size: var(--text-3xl);
 		color: var(--gray-0);
-		min-height: 2.2em;
 	}
-
-	@media (max-width: 799px) and (min-width: 644px) {
-		.title {
-			min-height: auto
-		}
-	}
-
 	@media (min-width: 50em) {
 		.hero {
 			font-size: var(--text-xl);

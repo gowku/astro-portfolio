@@ -26,8 +26,8 @@ const projects = (await getCollection('work')).sort(
 			/>
 			<Grid variant="offset">
 				{
-					projects.map((project,i) => (
-						<li class="projects" id=`project${i}`  >
+					projects.map((project) => (
+						<li class="projects" >
 							<PortfolioPreview project={project} />
 						</li>
 					))
@@ -38,18 +38,33 @@ const projects = (await getCollection('work')).sort(
 	</div>
 </BaseLayout>
 
+<script>
+function animateListItems() {
+  const listItems = document.querySelectorAll('.projects');
+  const delay = 300; 
+
+  listItems.forEach((item, index) => {
+    const isOdd = index % 2 === 0;
+
+    if (item instanceof HTMLElement) {
+	if (isOdd) {
+		item.style.animation = 'fadeInOdd 0.5s cubic-bezier(0.47,0,0.75,0.72) forwards';
+		item.style.animationDelay = `${index * delay}ms`;
+	} else {
+		item.style.animation = 'fadeInEven 0.5s cubic-bezier(0.47,0,0.75,0.72) forwards';
+		item.style.animationDelay = `${index * delay}ms`;
+      }
+    }
+  });
+}
+animateListItems();
+</script>
+
 
 <style>
-
-
-li:nth-child(odd) {
-	animation: fadeInOdd 0.5s cubic-bezier(0.47,0,0.75,0.72) forwards;
-}
- li:nth-child(even) {
-	transform: translateX(100%);
-} 
-
-
+	.projects {
+		opacity: 0;
+	}
 @keyframes fadeInOdd {
   0% {
     opacity: 0;
@@ -58,6 +73,17 @@ li:nth-child(odd) {
   100% {
     opacity: 1;
 	transform: translateX(0) translateY(var(--row-offset));
+  }
+}
+
+@keyframes fadeInEven {
+  0% {
+    opacity: 0;
+	transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+	transform: translateX(0);
   }
 }
 </style>

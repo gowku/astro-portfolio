@@ -1,6 +1,6 @@
 ---
-title: Elyse Project
-publishDate: 2023-05-01 00:00:00
+title: Elyse Project 6
+publishDate: 2017-05-01 00:00:00
 img: /assets/stock-1.jpg
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
