@@ -7,6 +7,8 @@ import ContactCTA from '../components/ContactCTA.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Icon from '../components/Icon.astro';
 
 const projects = (await getCollection('work')).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
@@ -23,7 +25,15 @@ const projects = (await getCollection('work')).sort(
 				title="Mes projets"
 				tagline="Découvrez mes projets les plus récents ci-dessous pour vous faire une idée de mon expérience passée."
 				align="start"
-			/>
+			>
+			<div class="about">
+				<CallToAction href="/about/">
+					A propos de moi 
+					<Icon icon="arrow-right" size="1.2em" />
+				</CallToAction>
+			</div>
+		
+		</Hero>
 			<Grid variant="offset">
 				{
 					projects.map((project) => (
@@ -62,6 +72,18 @@ animateListItems();
 
 
 <style>
+	.about{
+		width: 75%;
+		margin: 0 auto;
+	}
+	@media (min-width: 50em) {
+		.about{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: fit-content;
+		}
+	}
 	.projects {
 		opacity: 0;
 	}

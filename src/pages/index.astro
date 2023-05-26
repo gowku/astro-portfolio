@@ -25,6 +25,8 @@ const projects = (await getCollection('work'))
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
+
+
 <BaseLayout>
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
@@ -39,17 +41,29 @@ const projects = (await getCollection('work'))
 						<Pill><Icon icon="react-logo" size="1.33em" /> ReactJs</Pill>
 						<Pill><Icon icon="rocket-launch" size="1.33em" /> Freelance</Pill>
 					</div>
+					<div class="roles">
+						<CallToAction href="/about/">
+							A propos de moi 
+							<Icon icon="arrow-right" size="1.2em" />
+						</CallToAction>
+					</div>
 				</Hero>
 
-				<img
+				<img class="avatar"
 					alt="Julien Frébet"
 					width="480"
 					height="620"
-					src="/assets/Jufrbt-preview.jpg"
+					src="/assets/Jufrbt-light.jpg"
 				/>
 			</header>
 
 			<Skills />
+			<div class="about-mobile">
+				<CallToAction href="/about/">
+					A propos de moi 
+					<Icon icon="arrow-right" size="1.2em" />
+				</CallToAction>
+			</div>
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
@@ -70,6 +84,7 @@ const projects = (await getCollection('work'))
 						}
 					</Grid>
 				</div>
+				
 
 				<div class="cta">
 					<CallToAction href="/work/">
@@ -77,7 +92,8 @@ const projects = (await getCollection('work'))
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
 				</div>
-			</section>
+			</section >
+
 
 			<!-- a activer qund j'aurais des mentions -->
 			<!-- <section class="section with-background bg-variant">
@@ -107,7 +123,9 @@ const projects = (await getCollection('work'))
 	</div>
 </BaseLayout>
 
+
 <script>
+
 	function animateListItems() {
 	  const listItems = document.querySelectorAll('.projects');
 	  const delayIndex = 250; 
@@ -166,6 +184,10 @@ const projects = (await getCollection('work'))
 		display: none;
 	}
 
+	.about-mobile {
+		display: block;
+	}
+
 	.hero img {
 		aspect-ratio: 5 / 4;
 		object-fit: cover;
@@ -187,6 +209,10 @@ const projects = (await getCollection('work'))
 			display: flex;
 			gap: 0.5rem;
 		}
+
+		.about-mobile {
+		display: none;
+	}
 
 		.hero img {
 			aspect-ratio: 3 / 4;

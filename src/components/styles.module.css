@@ -1,0 +1,142 @@
+* {
+    transition: all 0.5s ease;
+  }
+ form {
+    width: 400px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #labels{
+    font-size: 180px !important
+  }
+  form div, form label, form input, form textarea {
+    width: 100%;
+  }
+  form div {
+    margin-top: 20px;
+  }
+  form label {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .field:nth-of-type(2) {
+    margin: 16px 0;
+  }
+  
+  label, input, textarea {
+    padding: 8px;
+  }
+  
+  label i {
+    margin: 0 10px 0 0;
+  }
+  
+  .field:focus-within label {
+    color: #000;
+    letter-spacing: 2px;
+  }
+  
+  input, textarea {
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 8px 6px -6px #555;
+  }
+  input:focus, textarea:focus {
+    background: white;
+    box-shadow: none;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  textarea::-webkit-scrollbar {
+    width: 0;
+  }
+
+  
+  
+  /* form > button {
+    position: relative;
+		display: flex;
+		place-content: center;
+		text-align: center;
+		padding: 0.56em 2em;
+		gap: 0.8em;
+		color: var(--accent-text-over);
+		text-decoration: none;
+		line-height: 1.1;
+		border-radius: 999rem;
+		overflow: hidden;
+		background: var(--gradient-accent-orange);
+		box-shadow: var(--shadow-md);
+		white-space: nowrap;
+  } */
+  /* form > button {
+    background: #2f4ad0;
+    margin: 16px 0 50px 0;
+    padding: 8px 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 8px 6px -6px #555;
+  } */
+  /* form > button:hover {
+    letter-spacing: 2px;
+    box-shadow: none;
+  } */
+  
+  @media (max-width: 425px) {
+    form {
+      width: 100%;
+    }
+  }
+
+  form > button {
+    position: relative;
+		display: flex;
+		place-content: center;
+		text-align: center;
+		padding: 0.56em 2em;
+		color: var(--accent-text-over);
+		line-height: 1.1;
+		border-radius: 999rem;
+    border: none;
+		overflow: hidden;
+		background: var(--gradient-accent-orange);
+		box-shadow: var(--shadow-md);
+		white-space: nowrap;
+    margin-top: 25px;
+	}
+
+	@media (min-width: 20em) {
+		form > button {
+			font-size: var(--text-lg);
+		}
+	}
+
+	/* Overlay for hover effects. */
+	form > button::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		transition: background-color var(--theme-transition);
+		mix-blend-mode: overlay;
+	}
+
+	form > button:focus::after,
+	form > button:hover::after {
+		background-color: hsla(var(--gray-999-basis), 0.3);
+	}
+
+	@media (min-width: 50em) {
+		form > button {
+			padding: 1rem 2.25rem;
+			font-size: var(--text-lg);
+		}
+	}

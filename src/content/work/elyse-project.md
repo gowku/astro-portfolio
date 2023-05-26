@@ -9,7 +9,6 @@ tags:
   - Frontend
   - ReactJs
   - Firebase
-  - SCRUM
 ---
 
 ### DESCRIPTION

@@ -22,8 +22,8 @@ Ce site web portfolio sert de plateforme pour mettre en avant mon travail, mon e
 - **Vitrine des projets** : Présentation d'une vaste collection de mes projets, comprenant des descriptions, des images et des liens vers des démonstrations en direct ou des dépôts GitHub.
 - **À propos de moi** : Présentation d'un aperçu concis de mon parcours, de mes compétences et de mes domaines d'expertise, ainsi qu'une biographie captivante qui reflète ma personnalité.
 - **Formulaire de contact** : Inclusion d'un formulaire de contact pour faciliter les échanges, permettant aux visiteurs de me contacter pour des collaborations ou des opportunités professionnelles.
-- **Curriculum Vitae** : Mise à disposition d'une version téléchargeable de mon curriculum vitae, permettant aux clients potentiels ou aux employeurs d'accéder à un aperçu complet de mes qualifications.
-- **Témoignages** : Présentation de témoignages de clients satisfaits ou de collègues pour renforcer ma crédibilité et consolider ma réputation professionnelle.
+<!-- - **Curriculum Vitae** : Mise à disposition d'une version téléchargeable de mon curriculum vitae, permettant aux clients potentiels ou aux employeurs d'accéder à un aperçu complet de mes qualifications.
+- **Témoignages** : Présentation de témoignages de clients satisfaits ou de collègues pour renforcer ma crédibilité et consolider ma réputation professionnelle. -->
 - **Intégration des réseaux sociaux** : Inclusion de liens vers mes profils sur les réseaux sociaux, permettant aux visiteurs de me suivre sur différentes plateformes.
 
 ### Technologies Utilisées
@@ -35,7 +35,7 @@ Ce site web portfolio sert de plateforme pour mettre en avant mon travail, mon e
 
 ### Liens du Projet
 
-- Dépôt GitHub : [Par ici pour voir mon github !](https://github.com/gowku/astro-portfolio)
+- Dépôt GitHub : <a href="https://github.com/gowku/astro-portfolio" target="_blank" rel="noopener noreferrer">Par ici pour voir mon GitHub !</a>
 
 ### Conclusion
 

@@ -1,19 +1,24 @@
 ---
+import type { boolean } from "astro/zod";
+
 import Icon, { Props as IconProps } from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import CV from "../../download/CV_JULIEN_FREBET.pdf";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
+	{ label: 'Acceuil', href: '/' },
 	{ label: 'Projets', href: '/work/' },
-	{ label: 'About', href: '/about/' },
+	{ label: 'A Propos', href: '/about/' },
+	{ label: 'Contact', href: '/contact/' },
 ];
-
 /** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
+const iconLinks: { label: string; href: string; icon: IconProps['icon']; download?: boolean }[] = [
 	{ label: 'GitHub', href: 'https://github.com/gowku', icon: 'github-logo' },
 	{ label: 'Linkedin', href: 'https://www.linkedin.com/in/julien-frebet-054615200/', icon: 'linkedin-logo' },
+	{ label: 'CV', href:"../../download/CV_JULIEN_FREBET.pdf", icon: 'CV', download: true },
 ];
+console.log(typeof CV)
 ---
 
 <nav>
@@ -57,8 +62,8 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		<div class="menu-footer">
 			<div class="socials">
 				{
-					iconLinks.map(({ href, icon, label }) => (
-						<a href={href} class="social">
+					iconLinks.map(({ href, icon, label ,download }) => (
+						<a href={href} target="_blank" rel="noopener noreferrer" class="social" download >
 							<span class="sr-only">{label}</span>
 							<Icon icon={icon} />
 						</a>
@@ -66,14 +71,15 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 				}
 			</div>
 
-			<!-- <div class="theme-toggle">
+			<div class="theme-toggle">
 				<ThemeToggle />
-			</div> -->
+			</div>
 		</div>
 	</div>
 </nav>
 
 <script>
+	
 	class MenuButton extends HTMLElement {
 		constructor() {
 			super();

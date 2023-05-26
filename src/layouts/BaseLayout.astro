@@ -15,7 +15,7 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<html lang="en" class="theme-dark">
+<html lang="en">
 	<head>
 		<MainHead title={title} description={description} />
 	</head>
@@ -112,7 +112,3 @@ const { title, description } = Astro.props;
 	</body>
 </html>
 
-
-<script>
-	document.documentElement.classList.add('theme-dark');
-</script>
