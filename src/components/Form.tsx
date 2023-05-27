@@ -1,7 +1,7 @@
 // @ts-nocheck
-import { useRef } from "react";
-import emailjs from "@emailjs/browser";
-import Style from "./styles.module.css";
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import Style from './styles.module.css';
 
 export const Form = () => {
   const form = useRef(null);
@@ -9,9 +9,9 @@ export const Form = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm("service_5gob9mp", "template_92p2e57", form.current, "yYqGqbCI4uWtRiOoH").then(
+    emailjs.sendForm('service_5gob9mp', 'template_92p2e57', form.current, 'yYqGqbCI4uWtRiOoH').then(
       (result) => {
-        console.log(result.text, "ici");
+        console.log(result.text, 'ici');
         form.current.reset();
       },
       (error) => {
@@ -20,28 +20,58 @@ export const Form = () => {
     );
   };
 
+  const onChangeHandler = (e) => {
+    e.preventDefault();
+    if (e.target.value.length > 0) {
+      e.target.style.background = 'white';
+    }
+  };
+
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <div className="field" tabIndex="1">
-        <label id="labels" htmlFor="username">
-          <i className="far fa-user"></i>Votre Nom
+      <div className='field'>
+        <label htmlFor='username'>
+          Nom :
+          <input
+            id='username'
+            type='text'
+            placeholder='e.g. john doe'
+            name='user_name'
+            onChange={onChangeHandler}
+            minlength='3'
+            tabIndex='1'
+            required
+          />
         </label>
-        <input name="username" type="text" placeholder="e.g. john doe" required name="user_name" />
       </div>
-      <div className="field" tabIndex="2">
-        <label htmlFor="email">
-          <i className="far fa-envelope"></i>Votre Email
+      <div className='field'>
+        <label htmlFor='email'>
+          Email :
+          <input
+            id='email'
+            type='email'
+            placeholder='email@domain.com'
+            required
+            name='user_email'
+            tabIndex='2'
+            onChange={onChangeHandler}
+          />
         </label>
-        <input name="email" type="email" placeholder="email@domain.com" required name="user_email" />
       </div>
-      <div className="field" tabIndex="3">
-        <label htmlFor="message">
-          <i className="far fa-edit"></i>
-          Votre Message
+      <div className='field'>
+        <label htmlFor='message'>
+          Message :
+          <textarea
+            id='message'
+            placeholder='Bonjour, ...'
+            required
+            name='message'
+            minlength='3'
+            tabIndex='3'
+            onChange={onChangeHandler}></textarea>
         </label>
-        <textarea name="message" placeholder="Bonjour, ..." required name="message"></textarea>
       </div>
-      <button className="btn-submit">Envoyer</button>
+      <button className='btn-submit'>Envoyer</button>
     </form>
   );
 };

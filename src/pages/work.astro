@@ -11,101 +11,107 @@ import CallToAction from '../components/CallToAction.astro';
 import Icon from '../components/Icon.astro';
 
 const projects = (await getCollection('work')).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 ---
 
 <BaseLayout
-	title="Projets | Julien Frébet"
-	description="Découvrez mes projets les plus récents pour vous faire une idée de mon expérience passée."
->
-	<div class="stack gap-20">
-		<main class="wrapper stack gap-8">
-			<Hero
-				title="Mes projets"
-				tagline="Découvrez mes projets les plus récents ci-dessous pour vous faire une idée de mon expérience passée."
-				align="start"
-			>
-			<div class="about">
-				<CallToAction href="/about/">
-					A propos de moi 
-					<Icon icon="arrow-right" size="1.2em" />
-				</CallToAction>
-			</div>
-		
-		</Hero>
-			<Grid variant="offset">
-				{
-					projects.map((project) => (
-						<li class="projects" >
-							<PortfolioPreview project={project} />
-						</li>
-					))
-				}
-			</Grid>
-		</main>
-		<ContactCTA />
-	</div>
+  title='Projets | Julien Frébet'
+  description='Découvrez mes projets les plus récents pour vous faire une idée de mon expérience passée.'>
+  <div class='stack gap-20'>
+    <main class='wrapper stack gap-8'>
+      <Hero
+        title='Mes projets'
+        tagline='Découvrez mes projets les plus récents ci-dessous pour vous faire une idée de mon expérience passée.'
+        align='start'>
+        <div class='about'>
+          <CallToAction href='/about/'>
+            A propos de moi
+            <Icon icon='arrow-right' size='1.2em' />
+          </CallToAction>
+        </div>
+      </Hero>
+      <Grid variant='offset'>
+        {
+          projects.map((project) => (
+            <li class='projects'>
+              <PortfolioPreview project={project} />
+            </li>
+          ))
+        }
+      </Grid>
+    </main>
+    <ContactCTA />
+  </div>
 </BaseLayout>
 
-<script>
-function animateListItems() {
-  const listItems = document.querySelectorAll('.projects');
-  const delay = 250; 
+<style lang='scss'>
+  .projects:nth-child(odd) {
+    opacity: 0;
 
-  listItems.forEach((item, index) => {
-    const isOdd = index % 2 === 0;
+    transform: translateX(-100%) translateY(var(--row-offset));
+  }
+  .projects:nth-child(even) {
+    opacity: 0;
 
-    if (item instanceof HTMLElement) {
-	if (isOdd) {
-		item.style.animation = 'fadeInOdd 0.5s linear forwards';
-		item.style.animationDelay = `${index * delay}ms`;
-	} else {
-		item.style.animation = 'fadeInEven 0.5s linear forwards';
-		item.style.animationDelay = `${index * delay}ms`;
+    transform: translateX(100%);
+  }
+
+  @keyframes fadeInOdd {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) translateY(var(--row-offset));
+    }
+  }
+
+  @keyframes fadeInEven {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  $animation-duration: 0.5s;
+  $animation-delay: 300ms;
+
+  @mixin fadeInAnimation($animation-name) {
+    animation: $animation-name $animation-duration linear forwards;
+  }
+
+  .projects {
+    @for $index from 1 through 30 {
+      $is-odd: $index % 2 == 1;
+
+      &:nth-child(#{$index}) {
+        @if $is-odd {
+          @include fadeInAnimation(fadeInOdd);
+          animation-delay: #{($index - 1) * $animation-delay};
+        } @else {
+          @include fadeInAnimation(fadeInEven);
+          animation-delay: #{($index - 1) * $animation-delay};
+        }
       }
     }
-  });
-}
-animateListItems();
-</script>
-
+  }
+</style>
 
 <style>
-	.about{
-		width: 75%;
-		margin: 0 auto;
-	}
-	@media (min-width: 50em) {
-		.about{
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: fit-content;
-		}
-	}
-	.projects {
-		opacity: 0;
-	}
-@keyframes fadeInOdd {
-  0% {
-    opacity: 0;
-	transform: translateX(-100%) translateY(var(--row-offset));
+  .about {
+    width: 75%;
+    margin: 0 auto;
   }
-  100% {
-    opacity: 1;
-	transform: translateX(0) translateY(var(--row-offset));
+  @media (min-width: 50em) {
+    .about {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: fit-content;
+    }
   }
-}
-
-@keyframes fadeInEven {
-  0% {
-    opacity: 0;
-	transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-	transform: translateX(0);
-  }
-}
 </style>

@@ -1,16 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { Form } from '../components/Form'
+import { Form } from '../components/Form';
+import Hero from '../components/Hero.astro';
 ---
-<BaseLayout title="Contact | Julien Frébet" description="Contact Julien Frébet">
-    <div class="container">
-        <Form client:only="react"/>
-    </div>
 
+<BaseLayout title='Contact | Julien Frébet' description='Contact Julien Frébet'>
+  <Hero title='Informations de contact' tagline='Contactez-moi pour toute demande' />
+
+  <div class='container'>
+    <Form client:only='react' />
+  </div>
 </BaseLayout>
 
 <style>
-.container {
+  .container {
     width: 100%;
     height: 100%;
     padding: 0 16px;
@@ -18,5 +21,6 @@ import { Form } from '../components/Form'
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
+    margin-top: 40px;
   }
 </style>

@@ -1,78 +1,77 @@
 ---
 interface Props {
-	title: string;
-	tagline?: string;
-	align?: 'start' | 'center';
+  title: string;
+  tagline?: string;
+  align?: 'start' | 'center';
 }
 
 const { align = 'center', tagline, title } = Astro.props;
 ---
 
 <header class:list={['hero stack gap-4', align]}>
-	<div class="stack gap-2">
-		<h1 class="title">{title}</h1>
-		{tagline && <p class="tagline">{tagline}</p>}
-	</div>
-	<slot />
+  <div class='stack gap-2'>
+    <h1 class='title'>{title}</h1>
+    {tagline && <p class='tagline'>{tagline}</p>}
+  </div>
+  <slot />
 </header>
 
 <!--  Typewriter effect -->
 <script>
-	const myTitle = document.getElementsByClassName("title")[0].textContent;
-	const delay = 75; 
-	document.getElementsByClassName("title")[0].textContent = "";
+  const myTitle = document.getElementsByClassName('title')[0].textContent;
+  const delay = 75;
+  document.getElementsByClassName('title')[0].textContent = '';
 
-	if (myTitle){
-	for (const letters of myTitle) {
-		const span = document.createElement("span")
-		span.textContent = letters
-		span.style.opacity = "0";
-		document.getElementsByClassName("title")[0].appendChild(span);
-	}
-	const spans = document.getElementsByClassName("title")[0].getElementsByTagName("span");
+  if (myTitle) {
+    for (const letters of myTitle) {
+      const span = document.createElement('span');
+      span.textContent = letters;
+      span.style.opacity = '0';
+      document.getElementsByClassName('title')[0].appendChild(span);
+    }
+    const spans = document.getElementsByClassName('title')[0].getElementsByTagName('span');
 
-	for (const span of spans) {
-		span.style.opacity = "1";
-		await new Promise(r => setTimeout(r, delay));
-	}
-}
+    for (const span of spans) {
+      span.style.opacity = '1';
+      await new Promise((r) => setTimeout(r, delay));
+    }
+  }
 </script>
 
 <style>
-	.hero {
-		font-size: var(--text-lg);
-		text-align: center;
-		position: relative;
-	}
+  .hero {
+    font-size: var(--text-lg);
+    text-align: center;
+    position: relative;
+  }
 
-	.title,
-	.tagline {
-		max-width: 37ch;
-		margin-inline: auto;
-	}
+  .title,
+  .tagline {
+    max-width: 37ch;
+    margin-inline: auto;
+  }
 
-	.title {
-		font-size: var(--text-3xl);
-		color: var(--gray-0);
-	}
+  .title {
+    font-size: var(--text-3xl);
+    color: var(--gray-0);
+  }
 
-	@media (min-width: 50em) {
-		
-		.hero {
-			font-size: var(--text-xl);
-		}
+  @media (min-width: 50em) {
+    .hero {
+      font-size: var(--text-xl);
+    }
 
-		.start {
-			text-align: start;
-		}
+    .start {
+      text-align: start;
+    }
 
-		.start .title,
-		.start .tagline {
-			margin-inline: unset;
-		}
+    .start .title,
+    .start .tagline {
+      margin-inline: unset;
+    }
 
-		.title {
-			font-size: var(--text-5xl);
-		}
-	}
+    .title {
+      font-size: var(--text-5xl);
+    }
+  }
 </style>
