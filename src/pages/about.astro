@@ -9,7 +9,7 @@ import Hero from '../components/Hero.astro';
   <div class='stack gap-20'>
     <main class='wrapper about'>
       <Hero title='A Propos' tagline='Découvrez mon parcours et mes compétances.'>
-        <img class='avatar' width='1553' height='873' src='/assets/jufrbt-light.webp' alt='Julien Frébet' />
+        <img class='avatar' width='1553' height='873' src='/assets/jufrbt.png' alt='Julien Frébet' />
       </Hero>
 
       <section>
@@ -54,6 +54,9 @@ import Hero from '../components/Hero.astro';
 </BaseLayout>
 
 <style>
+  .avatar {
+    background-color: var(--avatar);
+  }
   .about {
     display: flex;
     flex-direction: column;
@@ -66,7 +69,6 @@ import Hero from '../components/Hero.astro';
     box-shadow: var(--shadow-md);
     aspect-ratio: 16/9;
     object-fit: contain;
-    background-color: white;
   }
 
   section {

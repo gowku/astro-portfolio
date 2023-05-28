@@ -61,6 +61,8 @@
 
   /* Transitions */
   --theme-transition: 0.2s ease-in-out;
+
+  --avatar: white;
 }
 
 :root.theme-dark {
@@ -98,6 +100,8 @@
     0px 7px 7px rgba(255, 255, 255, 0.05), 0px 2px 4px rgba(255, 255, 255, 0.06);
   --shadow-lg: 0px 62px 25px rgba(255, 255, 255, 0.01), 0px 35px 21px rgba(255, 255, 255, 0.05),
     0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(255, 255, 255, 0.12);
+
+  --avatar: #213544;
 }
 
 html,

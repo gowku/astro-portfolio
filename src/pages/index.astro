@@ -43,7 +43,7 @@ const projects = (await getCollection('work'))
           </div>
         </Hero>
 
-        <img class='avatar' alt='Julien Frébet' width='480' height='620' src='/assets/jufrbt-light.webp' />
+        <img class='avatar' alt='Julien Frébet' width='480' height='620' src='/assets/jufrbt.png' />
       </header>
 
       <Skills />
@@ -111,6 +111,9 @@ const projects = (await getCollection('work'))
 </BaseLayout>
 
 <style lang='scss'>
+  .avatar {
+    background-color: var(--avatar);
+  }
   .projects:nth-child(odd) {
     opacity: 0;
 
