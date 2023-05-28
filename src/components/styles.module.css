@@ -43,6 +43,7 @@ textarea {
   box-shadow: 0 8px 6px -6px #555;
   margin-top: 10px;
   outline: none;
+  font-size: var(--text-md);
 }
 input:focus,
 textarea:focus {
