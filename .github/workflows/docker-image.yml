@@ -21,14 +21,10 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Generate version number
-        id: version
-        run: echo ::set-output name=tag::$(date +'%Y%m%d%H%M')
-
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:${{ steps.version.outputs.tag }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
