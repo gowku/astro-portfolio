@@ -78,17 +78,17 @@ import Icon from './Icon.astro';
         button.setAttribute('aria-pressed', String(dark));
 
         //change avatar dark/light theme
-        // const avatar = document.querySelector('.avatar') as HTMLImageElement;
+        const avatar = document.querySelector('.avatar') as HTMLImageElement;
 
-        // if (avatar) {
-        //   if (dark) {
-        //     avatar.setAttribute('src', '/assets/jufrbt-dark.webp');
-        //     avatar.style.backgroundColor = 'transparent';
-        //   } else {
-        //     avatar.setAttribute('src', '/assets/jufrbt-light.webp');
-        //     avatar.style.backgroundColor = 'white';
-        //   }
-        // }
+        if (avatar) {
+          if (dark) {
+            avatar.setAttribute('src', '/assets/jufrbt-dark.webp');
+            avatar.style.backgroundColor = 'transparent';
+          } else {
+            avatar.setAttribute('src', '/assets/jufrbt-light.webp');
+            avatar.style.backgroundColor = 'white';
+          }
+        }
       };
 
       // Toggle the theme when a user clicks the button.
