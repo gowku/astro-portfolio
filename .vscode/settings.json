@@ -1,3 +1,4 @@
 {
-  "conventionalCommits.scopes": ["portfolio"]
+  "conventionalCommits.scopes": ["portfolio"],
+  "ansible.python.interpreterPath": "/bin/python"
 }
