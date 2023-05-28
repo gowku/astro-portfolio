@@ -12,7 +12,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 LABEL Name=my-porfolio Version=0.0.1
 
 # Copy SSL certificate files
-COPY /certs/fullchain.pem /etc/nginx/certs/fullchain.pem
-COPY /certs/privkey.pem /etc/nginx/certs/privkey.pem
+# COPY /certs/fullchain.pem /etc/nginx/certs/fullchain.pem
+# COPY /certs/privkey.pem /etc/nginx/certs/privkey.pem
 
 COPY --from=build /app/dist /usr/share/nginx/html
