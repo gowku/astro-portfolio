@@ -5,7 +5,7 @@ RUN npm install
 COPY . .
 RUN npm run build -- --mode custom
 
-# FROM nginx:alpine as runtime
+FROM nginx:alpine as runtime
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Set a label with the name of the project
