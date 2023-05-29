@@ -110,66 +110,10 @@ const projects = (await getCollection('work'))
   </div>
 </BaseLayout>
 
-<style lang='scss'>
+<style>
   .avatar {
     background-color: var(--avatar);
   }
-  .projects:nth-child(odd) {
-    opacity: 0;
-
-    transform: translateX(-100%) translateY(var(--row-offset));
-  }
-  .projects:nth-child(even) {
-    opacity: 0;
-
-    transform: translateX(100%);
-  }
-
-  @keyframes fadeInOdd {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0) translateY(var(--row-offset));
-    }
-  }
-
-  @keyframes fadeInEven {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  $animation-duration: 0.5s;
-  $animation-delay: 300ms;
-
-  @mixin fadeInAnimation($animation-name) {
-    animation: $animation-name $animation-duration linear forwards;
-  }
-
-  .projects {
-    @for $index from 1 through 4 {
-      $is-odd: $index % 2 == 1;
-
-      &:nth-child(#{$index}) {
-        @if $is-odd {
-          @include fadeInAnimation(fadeInOdd);
-          animation-delay: #{($index - 1) * $animation-delay};
-        } @else {
-          @include fadeInAnimation(fadeInEven);
-          animation-delay: #{($index - 1) * $animation-delay};
-        }
-      }
-    }
-  }
-</style>
-
-<style>
   .hero {
     display: flex;
     flex-direction: column;
