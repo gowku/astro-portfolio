@@ -6,7 +6,7 @@ import ThemeToggle from './ThemeToggle.astro';
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-  { label: 'Acceuil', href: '/' },
+  { label: 'Accueil', href: '/' },
   { label: 'Projets', href: '/work/' },
   { label: 'A Propos', href: '/about/' },
   { label: 'Contact', href: '/contact/' },
@@ -33,6 +33,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
         </button>
       </template>
     </menu-button>
+    <div id='overlay'></div>
   </div>
   <div id='menu-content' hidden>
     <ul class='nav-items'>
@@ -92,8 +93,21 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
         menu.hidden = !expand;
       };
 
+      // Toggle overlay visibility
+      const overlay = document.getElementById('overlay')!;
+      const toggleOverlay = () => {
+        if (!menu.hidden) {
+          overlay.style.display = 'block';
+        } else {
+          overlay.style.display = 'none';
+        }
+      };
+
       // Toggle menu visibility when the menu button is clicked.
-      btn.addEventListener('click', () => setExpanded(menu.hidden));
+      btn.addEventListener('click', () => {
+        setExpanded(menu.hidden);
+        toggleOverlay();
+      });
 
       // Hide menu button for large screens.
       const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
@@ -103,12 +117,28 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
       const mediaQueries = window.matchMedia('(min-width: 50em)');
       handleViewports(mediaQueries);
       mediaQueries.addEventListener('change', handleViewports);
+
+      // Close menu and overlay when overlay is clicked
+      overlay.addEventListener('click', () => {
+        setExpanded(false);
+        toggleOverlay();
+      });
     }
   }
   customElements.define('menu-button', MenuButton);
 </script>
 
 <style>
+  #overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+  }
   nav {
     z-index: 9999;
     position: relative;
@@ -125,12 +155,14 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
   }
 
   .site-title {
+    position: relative;
     display: flex;
     gap: 0.5rem;
     align-items: center;
     line-height: 1.1;
     color: var(--gray-0);
     text-decoration: none;
+    z-index: 1;
   }
 
   .menu-button {
@@ -143,6 +175,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
     color: var(--gray-300);
     background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
     box-shadow: var(--shadow-md);
+    z-index: 1;
   }
 
   .menu-button[aria-expanded='true'] {

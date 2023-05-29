@@ -62,10 +62,6 @@ const { Content } = await entry.render();
     border-bottom: 1px solid var(--gray-800);
   }
 
-  .back-link {
-    display: none;
-  }
-
   .details {
     display: flex;
     flex-direction: column;
@@ -134,11 +130,6 @@ const { Content } = await entry.render();
   }
 
   @media (min-width: 50em) {
-    .back-link {
-      display: block;
-      align-self: flex-start;
-    }
-
     .details {
       flex-direction: row;
       gap: 2.5rem;
