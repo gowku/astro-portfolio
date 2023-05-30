@@ -1,6 +1,11 @@
 {
-  "conventionalCommits.scopes": ["portfolio"]
+  // "json.schemaDownload.enable": true,
+  "conventionalCommits.scopes": ["portfolio"],
   // "ansible.python.interpreterPath": "/bin/python",
-  // "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // "editor.formatOnSave": true
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

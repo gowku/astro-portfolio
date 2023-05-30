@@ -4,24 +4,32 @@ import type { boolean } from 'astro/zod';
 import Icon, { Props as IconProps } from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-  { label: 'Accueil', href: '/' },
-  { label: 'Projets', href: '/work/' },
-  { label: 'A Propos', href: '/about/' },
-  { label: 'Contact', href: '/contact/' },
+  { label: `${t('nav.home')}`, href: `/${lang}/` },
+  { label: `${t('nav.work')}`, href: `/${lang}/work/` },
+  { label: `${t('nav.about')}`, href: `/${lang}/about/` },
+  { label: `${t('nav.contact')}`, href: `/${lang}/contact/` },
 ];
+
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
   { label: 'GitHub', href: 'https://github.com/gowku', icon: 'github-logo' },
   { label: 'Linkedin', href: 'https://www.linkedin.com/in/julien-frebet-054615200/', icon: 'linkedin-logo' },
   { label: 'CV', href: '/assets/CV_JULIEN_FREBET.pdf', icon: 'CV' },
 ];
+
+console.log(Astro.url);
 ---
 
 <nav>
   <div class='menu-header'>
-    <a href='/' class='site-title'>
+    <a href={`/${lang}/`} class='site-title'>
       <Icon icon='terminal-window' color='var(--accent-regular)' size='1.6em' gradient />
       Julien Frébet
     </a>
@@ -45,7 +53,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
               class:list={[
                 'link',
                 {
-                  active: Astro.url.pathname === href || (href !== '/' && Astro.url.pathname.startsWith(href)),
+                  active: Astro.url.pathname === href || (href !== `/${lang}/` && Astro.url.pathname.startsWith(href)),
                 },
               ]}
               href={href}>

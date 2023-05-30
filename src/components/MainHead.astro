@@ -1,13 +1,17 @@
 ---
 import '../styles/global.css';
 import '../styles/animWork.scss';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 interface Props {
   title?: string | undefined;
   description?: string | undefined;
 }
 
-const { title = 'Julien Frébet - Portfolio', description = 'Le portfolio de Julien Frébet' } = Astro.props;
+const { title = `${t('mainHead.title')}`, description = `${t('mainHead.description')}` } = Astro.props;
 ---
 
 <meta charset='UTF-8' />

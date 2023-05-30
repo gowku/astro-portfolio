@@ -13,9 +13,13 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
-<html lang='en'>
+<html lang={lang}>
   <head>
     <MainHead title={title} description={description} />
   </head>

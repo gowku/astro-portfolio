@@ -1,7 +1,11 @@
 // @ts-nocheck
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import Style from './styles.module.css';
+import './styles.module.css';
+import { useTranslations } from '../i18n/utils';
+
+const lang = window.location.href.split('/')[3];
+const t = useTranslations(lang);
 
 export const Form = () => {
   const form = useRef(null);
@@ -31,14 +35,14 @@ export const Form = () => {
     <form ref={form} onSubmit={sendEmail}>
       <div className='field'>
         <label htmlFor='username'>
-          Nom :
+          {t('form.fullName')}
           <input
             id='username'
             type='text'
-            placeholder='e.g. john doe'
+            placeholder={t('form.username.placeHolder')}
             name='user_name'
             onChange={onChangeHandler}
-            minlength='3'
+            minLength='3'
             tabIndex='1'
             required
           />
@@ -63,15 +67,15 @@ export const Form = () => {
           Message :
           <textarea
             id='message'
-            placeholder='Bonjour, ...'
+            placeholder={t('form.message')}
             required
             name='message'
-            minlength='3'
+            minLength='3'
             tabIndex='3'
             onChange={onChangeHandler}></textarea>
         </label>
       </div>
-      <button className='btn-submit'>Envoyer</button>
+      <button className='btn-submit'>{t('button.send')}</button>
     </form>
   );
 };

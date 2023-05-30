@@ -1,11 +1,15 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { Form } from '../components/Form';
-import Hero from '../components/Hero.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Form } from '../../components/Form';
+import Hero from '../../components/Hero.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <BaseLayout title='Contact | Julien Frébet' description='Contact Julien Frébet'>
-  <Hero title='Informations de contact' tagline='Contactez-moi pour toute demande' />
+  <Hero title={t('contact.hero.title')} tagline={t('contact.hero.tagline')} />
 
   <div class='container'>
     <Form client:only='react' />

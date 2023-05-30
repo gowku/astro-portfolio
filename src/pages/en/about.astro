@@ -1,20 +1,22 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
-import ContactCTA from '../components/ContactCTA.astro';
-import CallToAction from '../components/CallToAction.astro';
-import Hero from '../components/Hero.astro';
-import lang from '../data/lang/about.json';
-console.log(lang);
+import ContactCTA from '../../components/ContactCTA.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import Hero from '../../components/Hero.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<BaseLayout title='A Propos | Julien Frébet' description='A propos de Julien Frébet'>
+<BaseLayout title={t('about.title')} description={t('about.description')}>
   <div class='stack gap-20'>
     <main class='wrapper about'>
-      <Hero title='A Propos' tagline='Découvrez mon parcours et mes compétances.'>
+      <Hero title={t('about.hero.title')} tagline={t('about.hero.tagline')}>
         <img class='avatar' width='1553' height='873' src='/assets/jufrbt.webp' alt='Julien Frébet' />
         <div class='CTA-download'>
-          <CallToAction href='/assets/CV_JULIEN_FREBET.pdf'>Télécharger mon CV</CallToAction>
+          <CallToAction href='/assets/CV_JULIEN_FREBET.pdf'>{t('about.CTA')}</CallToAction>
         </div>
       </Hero>
 
@@ -24,15 +26,13 @@ console.log(lang);
           <p>
             <!-- Je suis passionné par l'informatique, j'ai quitté mon dernier emploi pour une reconversion professionnelle
               dans le développement web et je suis maintenant freelance. -->
-            Mon intérêt profond pour l'informatique a été le moteur de ma reconversion professionnelle dans le développement
-            web en tant que freelance, après avoir quitté mon dernier emploi
+            {t('about.p[1]')}
           </p>
           <br />
           <p>
             <!-- J'ai suivi deux formations qui m'ont demandé d'apprendre par mes propres moyens et j'ai ainsi obtenu un
             socle de connaissances solide tout en étant autonome sur ma montée en compétence. -->
-            Mes deux formations exigeantes m'ont poussé à apprendre par moi-même, renforçant ainsi mes connaissances et mon
-            autonomie dans ma montée en compétence
+            {t('about.p[2]')}
           </p>
           <br />
           <p>
@@ -40,15 +40,12 @@ console.log(lang);
             qui me passionne, notamment l'écosystème Javascript et plus particulièrement ReactJs. Mon expérience
             professionnelle passée m'a appris à être autonome de plus je suis rigoureux dans les tâches qui me sont
             confiées et je sais m'adapter aux différentes situations que je peux rencontrer. -->
-            Chaque jour, je me tiens informé des avancées technologiques dans les domaines qui me passionnent, en particulier
-            dans l'écosystème JavaScript et plus spécifiquement ReactJs. Mon expérience professionnelle antérieure m'a appris
-            l'importance de l'autonomie, de la rigueur et de l'adaptabilité pour fournir un travail de qualité, quelles que
-            soient les circonstances.
+            {t('about.p[3]')}
           </p>
         </div>
       </section>
       <section>
-        <h2 class='section-title'>Diplômes</h2>
+        <h2 class='section-title'>{t('about.h2')}</h2>
         <div class='content'>
           <p>Bac +3/4 Développeur d'application React (2023)</p>
           <p>Bac +2 Développeur web (2022)</p>
@@ -58,7 +55,7 @@ console.log(lang);
       <section>
         <h2 class='section-title'>Skills</h2>
         <div class='content'>
-          <p>Curieux, autonome, esprit d'équipe, adaptabilité, polyvalent</p>
+          <p>{t('about.skills.p')}</p>
         </div>
       </section>
     </main>

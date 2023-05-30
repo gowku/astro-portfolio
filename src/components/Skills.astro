@@ -1,27 +1,29 @@
 ---
 import Icon from './Icon.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class='box skills'>
   <div class='stack gap-2 lg:gap-4 skill skill1'>
     <Icon icon='terminal-window' color='var(--accent-regular)' size='2.5rem' gradient />
     <h2>Front-end</h2>
-    <p>Création d'interfaces utilisateurs interactives et attrayantes en utilisant des technologies modernes.</p>
+    <p>{t('skills.p[1]')}</p>
   </div>
   <div class='stack gap-2 lg:gap-4 skill skill2'>
     <Icon icon='trophy' color='var(--accent-regular)' size='2.5rem' gradient />
     <h2>Responsive design</h2>
     <p>
-      Sites internet qui s'adaptent de manière transparente à différents appareils et tailles d'écran pour offrir une
-      expérience utilisateur cohérente.
+      {t('skills.p[2]')}
     </p>
   </div>
   <div class='stack gap-2 lg:gap-4 skill skill3'>
     <Icon icon='strategy' color='var(--accent-regular)' size='2.5rem' gradient />
     <h2>Veille</h2>
     <p>
-      Passionné par l'IT, je suis constamment à l'affût des dernières tendances et innovations pour anticiper les
-      changements futurs.
+      {t('skills.p[3]')}
     </p>
   </div>
 </section>
