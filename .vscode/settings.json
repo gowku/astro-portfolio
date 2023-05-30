@@ -1,4 +1,6 @@
 {
-  "conventionalCommits.scopes": ["portfolio"],
-  "ansible.python.interpreterPath": "/bin/python"
+  "conventionalCommits.scopes": ["portfolio"]
+  // "ansible.python.interpreterPath": "/bin/python",
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "editor.formatOnSave": true
 }

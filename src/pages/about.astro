@@ -2,7 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
+import CallToAction from '../components/CallToAction.astro';
 import Hero from '../components/Hero.astro';
+import lang from '../data/lang/about.json';
+console.log(lang);
 ---
 
 <BaseLayout title='A Propos | Julien Frébet' description='A propos de Julien Frébet'>
@@ -10,6 +13,9 @@ import Hero from '../components/Hero.astro';
     <main class='wrapper about'>
       <Hero title='A Propos' tagline='Découvrez mon parcours et mes compétances.'>
         <img class='avatar' width='1553' height='873' src='/assets/jufrbt.webp' alt='Julien Frébet' />
+        <div class='CTA-download'>
+          <CallToAction href='/assets/CV_JULIEN_FREBET.pdf'>Télécharger mon CV</CallToAction>
+        </div>
       </Hero>
 
       <section>
@@ -17,7 +23,7 @@ import Hero from '../components/Hero.astro';
         <div class='content'>
           <p>
             <!-- Je suis passionné par l'informatique, j'ai quitté mon dernier emploi pour une reconversion professionnelle
-            dans le développement web et je suis maintenant freelance. -->
+              dans le développement web et je suis maintenant freelance. -->
             Mon intérêt profond pour l'informatique a été le moteur de ma reconversion professionnelle dans le développement
             web en tant que freelance, après avoir quitté mon dernier emploi
           </p>
@@ -62,6 +68,11 @@ import Hero from '../components/Hero.astro';
 </BaseLayout>
 
 <style>
+  .CTA-download {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: center;
+  }
   .avatar {
     background-color: var(--avatar);
   }
