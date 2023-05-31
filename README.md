@@ -25,12 +25,12 @@ The website is developed with Astro Js framework using the latest web technologi
 ## Installation and Usage
 
 1. Clone this repository to your local machine.
-2. Type some commands :  
-    ``` 
-    cd astro-portfolio
-    npm i
-    npm run dev
-    ```
+2. Type some commands :
+   ```
+   cd astro-portfolio
+   npm i
+   npm run dev
+   ```
 3. Open your web browser and visit `http://localhost:3000` to view the website.
 
 ## Technologies Used

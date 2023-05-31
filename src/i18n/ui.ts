@@ -1,9 +1,9 @@
 export const languages = {
   en: 'English',
-  fr: 'Français',
-};
+  fr: 'Français'
+}
 
-export const defaultLang = 'fr';
+export const defaultLang = 'fr'
 
 export const ui = {
   en: {
@@ -46,14 +46,17 @@ export const ui = {
     'index.pills[1]': 'Developer',
     'index.CTA.about': 'About Me',
     'index.h3': 'My last projects',
-    'index.p': 'Discover my last realisations who reflects my skills and my know-how.',
+    'index.p':
+      'Discover my last realisations who reflects my skills and my know-how.',
     'index.CTA.work': 'My Work',
     //pages/Work
     'work.title': 'Projects | Julien Frébet',
-    'work.description': 'Dicover my last projects who reflects my skills and my know-how.',
+    'work.description':
+      'Dicover my last projects who reflects my skills and my know-how.',
     'work.hero.title': 'My projects',
-    'work.hero.tagline': 'Discover my last realisations who reflects my skills and my know-how.',
-    'work.CTA': 'About Me',
+    'work.hero.tagline':
+      'Discover my last realisations who reflects my skills and my know-how.',
+    'work.CTA': 'About Me'
   },
   fr: {
     //components/CallToAction
@@ -65,7 +68,8 @@ export const ui = {
     'form.message': 'Bonjour, ...',
     //components/MainHead
     'mainHead.title': 'Julien Frébet - Portfolio',
-    'mainHead.description': 'Portfolio de Julien Frébet, développeur Front-end.',
+    'mainHead.description':
+      'Portfolio de Julien Frébet, développeur Front-end.',
     //components/Skills
     'skills.p[1]': `Création d'interfaces utilisateurs interactives et attrayantes en utilisant des technologies modernes.`,
     'skills.p[2]': `Sites internet qui s'adaptent de manière transparente à différents appareils et tailles d'écran pour offrir une
@@ -104,13 +108,16 @@ export const ui = {
     'index.pills[1]': 'Dévelopeur',
     'index.CTA.about': 'À propos de moi',
     'index.h3': 'Mes derniers projets',
-    'index.p': 'Découvrez mes réalisations récentes qui reflètent mon savoir-faire.',
+    'index.p':
+      'Découvrez mes réalisations récentes qui reflètent mon savoir-faire.',
     'index.CTA.work': 'Tous mes projets',
     //pages/Work
     'work.title': 'Projets | Julien Frébet',
-    'work.description': 'Découvrez mes projets les plus récents pour vous faire une idée de mon expérience passée.',
+    'work.description':
+      'Découvrez mes projets les plus récents pour vous faire une idée de mon expérience passée.',
     'work.hero.title': 'Mes projets',
-    'work.hero.tagline': 'Découvrez mes projets les plus récents pour vous faire une idée de mon expérience passée.',
-    'work.CTA': 'À propos de moi',
-  },
-} as const;
+    'work.hero.tagline':
+      'Découvrez mes projets les plus récents pour vous faire une idée de mon expérience passée.',
+    'work.CTA': 'À propos de moi'
+  }
+} as const

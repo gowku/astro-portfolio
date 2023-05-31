@@ -15,46 +15,46 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const projects = (await getCollection('work')).sort(
-  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 ---
 
 <BaseLayout title={t('work.title')} description={t('work.description')}>
-  <div class='stack gap-20'>
-    <main class='wrapper stack gap-8'>
-      <Hero title={t('work.hero.title')} tagline={t('work.hero.tagline')} align='start'>
-        <div class='about'>
-          <CallToAction href={`/${lang}/about/`}>
-            {t('work.CTA')}
-            <Icon icon='arrow-right' size='1.2em' />
-          </CallToAction>
-        </div>
-      </Hero>
-      <Grid variant='offset'>
-        {
-          projects.map((project) => (
-            <li class='projects'>
-              <PortfolioPreview project={project} />
-            </li>
-          ))
-        }
-      </Grid>
-    </main>
-    <ContactCTA />
-  </div>
+    <div class='stack gap-20'>
+        <main class='wrapper stack gap-8'>
+            <Hero title={t('work.hero.title')} tagline={t('work.hero.tagline')} align='start'>
+                <div class='about'>
+                    <CallToAction href={`/${lang}/about/`}>
+                        {t('work.CTA')}
+                        <Icon icon='arrow-right' size='1.2em' />
+                    </CallToAction>
+                </div>
+            </Hero>
+            <Grid variant='offset'>
+                {
+                    projects.map((project) => (
+                        <li class='projects'>
+                            <PortfolioPreview project={project} />
+                        </li>
+                    ))
+                }
+            </Grid>
+        </main>
+        <ContactCTA />
+    </div>
 </BaseLayout>
 
 <style>
-  .about {
-    width: 75%;
-    margin: 0 auto;
-  }
-  @media (min-width: 50em) {
     .about {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: fit-content;
+        width: 75%;
+        margin: 0 auto;
     }
-  }
+    @media (min-width: 50em) {
+        .about {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: fit-content;
+        }
+    }
 </style>
