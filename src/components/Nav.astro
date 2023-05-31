@@ -5,6 +5,7 @@ import Icon, { Props as IconProps } from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import LanguagePicker from './LanguagePicker.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -82,6 +83,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 
             <div class='theme-toggle'>
                 <ThemeToggle />
+                <LanguagePicker />
             </div>
         </div>
     </div>
@@ -276,6 +278,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
         display: flex;
         align-items: center;
         height: calc(var(--icon-size) + 2 * var(--icon-padding));
+        border: 1px solid blue;
     }
 
     @media (min-width: 50em) {

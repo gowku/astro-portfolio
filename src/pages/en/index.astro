@@ -36,9 +36,16 @@ const projects = (await getCollection('work'))
             <header class='hero'>
                 <Hero title={t('index.hero.title')} tagline={t('index.hero.tagline')} align='start'>
                     <div class='roles'>
-                        <Pill><Icon icon='code' size='1.33em' /> {t('index.pills[1]')}</Pill>
-                        <Pill><Icon icon='react-logo' size='1.33em' /> ReactJs</Pill>
-                        <Pill><Icon icon='rocket-launch' size='1.33em' /> Freelance</Pill>
+                        <Pill>
+                            <Icon icon='code' size='1.33em' />
+                            {t('index.pills[1]')}
+                        </Pill>
+                        <Pill>
+                            <Icon icon='react-logo' size='1.33em' /> ReactJs
+                        </Pill>
+                        <Pill>
+                            <Icon icon='rocket-launch' size='1.33em' /> Freelance
+                        </Pill>
                     </div>
                     <div class='roles'>
                         <CallToAction href={`/${lang}/about/`}>
@@ -88,7 +95,7 @@ const projects = (await getCollection('work'))
                 </div>
             </section>
 
-            <!-- a activer qund j'aurais des mentions -->
+            <!-- a activer quand j'aurais des mentions -->
             <!-- <section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Mentions</h3>
