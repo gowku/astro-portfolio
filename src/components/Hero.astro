@@ -12,7 +12,7 @@ const { align = 'center', tagline, title } = Astro.props;
     <div class='stack gap-2'>
         <h1 class='title'>
             {
-                [...title].map((char, i) => {
+                title.split('').map((char, i) => {
                     return <span class={`cha${i}`}>{char}</span>;
                 })
             }
