@@ -1,7 +1,7 @@
 ---
 title: Elyse Project
 publishDate: 2023-05-01 00:00:00
-img: /assets/stock-1.jpg
+img: /assets/stock-1.webp
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
   J'ai développé une application web en React de retour satisfaction client.

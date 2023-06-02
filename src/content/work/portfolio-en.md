@@ -1,7 +1,7 @@
 ---
 title: Portfolio
 publishDate: 2023-05-25 00:00:00
-img: /assets/mockup-portfolio.jpg
+img: /assets/mockup-portfolio.webp
 img_alt: mockup desktop
 description: |
   A visually appealing and user-friendly portfolio that showcases my skills, projects, and accomplishments.
