@@ -1,0 +1,62 @@
+---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl } from '../i18n/utils';
+
+const UILang = getLangFromUrl(Astro.url);
+
+const pathName = Astro.url.pathname.split('/')[2];
+---
+
+<div class='lang'>
+    {
+        Object.entries(languages).map(([lang, label], index) => (
+            <>
+                <a
+                    class:list={[
+                        'item',
+                        {
+                            active: UILang === lang
+                        }
+                    ]}
+                    href={`/${lang}/${pathName}`}>
+                    {lang}
+                </a>
+                {index !== 1 && <span class='slash'>/</span>}
+            </>
+        ))
+    }
+</div>
+
+<script>
+    const navLink = document.querySelectorAll('.link');
+    const currentPath = document.location.pathname + '/';
+    navLink.forEach((link) => {
+        if (link.attributes[1].value === currentPath) {
+            link.classList.add('active');
+        }
+    });
+</script>
+
+<style lang='scss'>
+    .lang {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+        color: var(--accent-dark);
+        height: 100%;
+        .item {
+            text-transform: capitalize;
+            text-decoration: none;
+            font-size: var(--text-base);
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .slash {
+            margin: 0 5px;
+        }
+        .active {
+            font-size: var(--text-lg);
+        }
+    }
+</style>

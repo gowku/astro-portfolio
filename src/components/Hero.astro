@@ -1,80 +1,80 @@
 ---
 interface Props {
-  title: string;
-  tagline?: string;
-  align?: 'start' | 'center';
+    title: string;
+    tagline?: string;
+    align?: 'start' | 'center';
 }
 
 const { align = 'center', tagline, title } = Astro.props;
 ---
 
 <header class:list={['hero stack gap-4', align]}>
-  <div class='stack gap-2'>
-    <h1 class='title'>
-      {
-        [...title].map((char, i) => {
-          return <span class={`cha${i}`}>{char}</span>;
-        })
-      }
-    </h1>
-    {tagline && <p class='tagline'>{tagline}</p>}
-  </div>
-  <slot />
+    <div class='stack gap-2'>
+        <h1 class='title'>
+            {
+                title.split('').map((char, i) => {
+                    return <span class={`cha${i}`}>{char}</span>;
+                })
+            }
+        </h1>
+        {tagline && <p class='tagline'>{tagline}</p>}
+    </div>
+    <slot />
 </header>
 
 <style lang='scss'>
-  @for $i from 0 through 100 {
-    .cha#{$i} {
-      opacity: 0;
-      animation: typewriter ease-in-out forwards;
-      animation-delay: $i * 0.075s;
+    @for $i from 0 through 100 {
+        .cha#{$i} {
+            opacity: 0;
+            animation: typewriter ease-in-out forwards;
+            animation-delay: $i * 0.075s;
+        }
     }
-  }
 
-  @keyframes typewriter {
-    0% {
-      opacity: 0;
+    @keyframes typewriter {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
-    100% {
-      opacity: 1;
-    }
-  }
 </style>
 
 <style>
-  .hero {
-    font-size: var(--text-lg);
-    text-align: center;
-    position: relative;
-  }
-
-  .title,
-  .tagline {
-    max-width: 37ch;
-    margin-inline: auto;
-  }
-
-  .title {
-    font-size: var(--text-3xl);
-    color: var(--gray-0);
-  }
-
-  @media (min-width: 50em) {
     .hero {
-      font-size: var(--text-xl);
+        font-size: var(--text-lg);
+        text-align: center;
+        position: relative;
     }
 
-    .start {
-      text-align: start;
-    }
-
-    .start .title,
-    .start .tagline {
-      margin-inline: unset;
+    .title,
+    .tagline {
+        max-width: 37ch;
+        margin-inline: auto;
     }
 
     .title {
-      font-size: var(--text-5xl);
+        font-size: var(--text-3xl);
+        color: var(--gray-0);
     }
-  }
+
+    @media (min-width: 50em) {
+        .hero {
+            font-size: var(--text-xl);
+        }
+
+        .start {
+            text-align: start;
+        }
+
+        .start .title,
+        .start .tagline {
+            margin-inline: unset;
+        }
+
+        .title {
+            font-size: var(--text-5xl);
+        }
+    }
 </style>
