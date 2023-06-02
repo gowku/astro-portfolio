@@ -16,7 +16,7 @@ const t = useTranslations(lang);
 
 const projects = (
     await getCollection('work', ({ id }) => {
-        return id.split('-')[1].split('.')[0] === 'fr';
+        return id.split('-')[1].split('.')[0] === lang;
     })
 ).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 ---
