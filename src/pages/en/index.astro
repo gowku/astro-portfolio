@@ -22,7 +22,11 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // Content Fetching: List four most recent work projects
-const projects = (await getCollection('work'))
+const projects = (
+    await getCollection('work', ({ id }) => {
+        return id.split('-')[1].split('.')[0] === 'en';
+    })
+)
     .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
     .slice(0, 4);
 
