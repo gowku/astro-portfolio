@@ -13,7 +13,6 @@ const t = useTranslations(lang);
 ---
 
 <a class='card' href={`/${lang}/work/${slug}`}>
-    <!-- <a class='card' href={`/work/${slug}`}> -->
     <span class='title'>{data.title}</span>
     <img src={data.img} alt={data.img_alt || ''} loading='lazy' decoding='async' />
 </a>
@@ -32,7 +31,7 @@ const t = useTranslations(lang);
         font-family: var(--font-brand);
         font-size: var(--text-lg);
         font-weight: 500;
-        transition: box-shadow var(--theme-transition);
+        transition: box-shadow rotateX rotateY var(--theme-transition);
     }
 
     .card:hover {

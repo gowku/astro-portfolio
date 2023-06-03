@@ -57,7 +57,9 @@ export const ui = {
     'work.hero.title': 'My projects',
     'work.hero.tagline':
       'Discover my last realisations who reflects my skills and my know-how.',
-    'work.CTA': 'About Me'
+    'work.CTA': 'About Me',
+    //pages/[slug]
+    'slug.project': 'Projects'
   },
   fr: {
     //components/CallToAction
@@ -119,7 +121,9 @@ export const ui = {
     'work.hero.title': 'Mes projets',
     'work.hero.tagline':
       'Découvrez mes projets les plus récents pour vous faire une idée de mon expérience passée.',
-    'work.CTA': 'À propos de moi'
+    'work.CTA': 'À propos de moi',
+    //pages/[...slug]
+    'slug.project': 'Projets'
   }
 } as const
 

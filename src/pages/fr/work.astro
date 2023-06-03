@@ -46,7 +46,15 @@ const projects = (
     </div>
 </BaseLayout>
 
+<script src='../../script/3dHover.ts'></script>
+
 <style>
+    .projects {
+        perspective: 1000px;
+    }
+    .projects:hover {
+        z-index: 10;
+    }
     .about {
         width: 75%;
         margin: 0 auto;
