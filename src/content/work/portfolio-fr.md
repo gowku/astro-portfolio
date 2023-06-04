@@ -46,4 +46,4 @@ Cette intégration continue me permet de bénéficier d'un déploiement sans eff
 
 La création de ce portfolio m'a permis de présenter mes compétences et mes projets de manière efficace, tout en offrant une expérience utilisateur intuitive et agréable. Je suis enthousiaste à l'idée de partager mon travail et d'établir des liens avec des clients potentiels, des collaborateurs et des employeurs.
 
-N'hésitez pas à explorer la démo en direct ou à parcourir le dépôt GitHub pour avoir une compréhension plus approfondie du projet et de sa mise en œuvre.
+N'hésitez pas à parcourir le dépôt GitHub pour avoir une compréhension plus approfondie du projet et de sa mise en œuvre.

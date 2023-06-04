@@ -16,7 +16,7 @@ export default defineConfig({
     sitemap(),
     robotsTxt(),
     mdx(),
-    critters(),
+    // critters(),
     compressor(),
     purgecss({
       fontFace: true,

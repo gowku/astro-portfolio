@@ -16,6 +16,8 @@ import PortfolioPreview from '../../components/PortfolioPreview.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
 import Skills from '../../components/Skills.astro';
 
+import '../../styles/animWork.scss';
+
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -35,7 +37,7 @@ const projects = (
 ---
 
 <BaseLayout>
-    <div class='stack gap-20 lg:gap-48'>
+    <div id='swup' class='stack gap-20 lg:gap-48'>
         <div class='wrapper stack gap-8 lg:gap-20'>
             <header class='hero'>
                 <Hero title={t('index.hero.title')} tagline={t('index.hero.tagline')} align='start'>
@@ -126,8 +128,6 @@ const projects = (
         <ContactCTA />
     </div>
 </BaseLayout>
-
-<script src='../../script/3dHover.ts'></script>
 
 <style>
     .projects {

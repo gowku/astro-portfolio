@@ -1,7 +1,6 @@
 // @ts-nocheck
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import './styles.module.css'
 import { useTranslations } from '../i18n/utils'
 
 const lang = window.location.href.split('/')[3]

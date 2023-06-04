@@ -4,7 +4,9 @@ import { getLangFromUrl } from '../i18n/utils';
 
 const UILang = getLangFromUrl(Astro.url);
 
+//voir pour utiliser les customs slugs pour rediriger directement vers les projets quand changements de langues. (pour enlever le en ou fr )
 const pathName = Astro.url.pathname.split('/')[2];
+// const pathName = Astro.url.pathname.split('/').slice(2).join('/');
 ---
 
 <div class='lang'>
@@ -26,16 +28,6 @@ const pathName = Astro.url.pathname.split('/')[2];
         ))
     }
 </div>
-
-<script>
-    const navLink = document.querySelectorAll('.link');
-    const currentPath = document.location.pathname + '/';
-    navLink.forEach((link) => {
-        if (link.attributes[1].value === currentPath) {
-            link.classList.add('active');
-        }
-    });
-</script>
 
 <style lang='scss'>
     .lang {
