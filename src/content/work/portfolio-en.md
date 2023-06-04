@@ -46,4 +46,4 @@ This continuous integration allows me to benefit from effortless deployment and 
 
 Creating this portfolio has allowed me to present my skills and projects effectively while providing an intuitive and enjoyable user experience. I am excited to share my work and establish connections with potential clients, collaborators, and employers.
 
-Feel free to explore the live demo or browse the GitHub repository for a deeper understanding of the project and its implementation.
+Feel free to explore to browse the GitHub repository for a deeper understanding of the project and its implementation.

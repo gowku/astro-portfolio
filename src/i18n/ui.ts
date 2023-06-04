@@ -38,6 +38,7 @@ export const ui = {
     'about.p[3]': `Every day, I keep myself informed of technological advances in the fields that interest me, especially in the JavaScript ecosystem and more specifically ReactJs. My previous professional experience taught me the importance of autonomy, rigor and adaptability to provide quality work, whatever the circumstances.`,
     'about.h2': 'Degrees',
     'about.skills.p': `Curious, autonomous, team spirit, adaptability, versatile`,
+    'stack.h3': 'Database',
     //pages/Contact
     'contact.hero.title': `Contact Informations`,
     'contact.hero.tagline': `Don't hesitate to contact me for any questions or requests for quotes.`,
@@ -102,6 +103,7 @@ export const ui = {
     soient les circonstances.`,
     'about.h2': 'Diplômes',
     'about.skills.p': `Curieux, autonome, esprit d'équipe, adaptabilité, polyvalent`,
+    'stack.h3': 'Base de données',
     //pages/contact
     'contact.hero.title': 'Informations de contact',
     'contact.hero.tagline': `N'hésitez pas à me contacter pour toute question ou demande de devis.`,

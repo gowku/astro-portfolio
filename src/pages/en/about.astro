@@ -14,7 +14,14 @@ const t = useTranslations(lang);
     <div id='swup' class='stack gap-20'>
         <main class='wrapper about'>
             <Hero title={t('about.hero.title')} tagline={t('about.hero.tagline')}>
-                <img class='avatar' width='1553' height='873' src='/assets/jufrbt.webp' alt='Julien Frébet' />
+                <img
+                    class='avatar'
+                    width='1553'
+                    height='873'
+                    src='/assets/jufrbt.webp'
+                    alt='Julien Frébet'
+                    loading='lazy'
+                />
                 <div class='CTA-download'>
                     <CallToAction href='/assets/CV_JULIEN_FREBET.pdf'>{t('about.CTA')}</CallToAction>
                 </div>
@@ -58,47 +65,51 @@ const t = useTranslations(lang);
                     <p>{t('about.skills.p')}</p>
                 </div>
             </section>
-            <!-- <section id='stacks'>
+            <section id='stacks'>
                 <h2 class='section-title'>Stack</h2>
                 <div class='content container'>
-                    <div class='front'>
-                        <h3>Frontend</h3>
-                        <div class='icons'>
-                            <img src='/assets/img-stack/css3.svg' alt='Stack' />
-                            <img src='/assets/img-stack/html5.svg' alt='Stack' />
-                            <img src='/assets/img-stack/javascript.svg' alt='Stack' />
-                            <img src='/assets/img-stack/react.svg' alt='Stack' />
-                            <img src='/assets/img-stack/sass.svg' alt='Stack' />
-                            <img src='/assets/img-stack/typescript.svg' alt='Stack' />
-                            <img src='/assets/img-stack/astro-logo-light.svg' id='astro' alt='Stack' />
+                    <div class='top'>
+                        <div class='front'>
+                            <h3>Frontend</h3>
+                            <div class='icons'>
+                                <img src='/assets/img-stack/html5.svg' alt='Stack' />
+                                <img src='/assets/img-stack/css3.svg' alt='Stack' />
+                                <img src='/assets/img-stack/sass.svg' alt='Stack' />
+                                <img src='/assets/img-stack/javascript.svg' alt='Stack' />
+                                <img src='/assets/img-stack/react.svg' alt='Stack' />
+                                <img src='/assets/img-stack/redux.svg' alt='Stack' />
+                                <img src='/assets/img-stack/typescript.svg' alt='Stack' />
+                                <img src='/assets/img-stack/astro-logo-light.svg' id='astro' alt='Stack' />
+                            </div>
+                        </div>
+                        <div class='back'>
+                            <h3>Backend</h3>
+                            <div class='icons'>
+                                <img src='/assets/img-stack/nodejs.svg' alt='Stack' id='node' />
+                                <img src='/assets/img-stack/express.svg' alt='Stack' id='express' />
+                            </div>
                         </div>
                     </div>
-                    <div class='back'>
-                        <h3>Backend</h3>
-                        <div class='icons'>
-                            <img src='/assets/img-stack/nodejs.svg' alt='Stack' id='node' />
-                            <img src='/assets/img-stack/express.svg' alt='Stack' id='express' />
+                    <div class='bottom'>
+                        <div class='bdd'>
+                            <h3>{t('stack.h3')}</h3>
+                            <div class='icons'>
+                                <img src='/assets/img-stack/mysql.svg' alt='Stack' />
+                                <img src='/assets/img-stack/mongodb.svg' alt='Stack' />
+                            </div>
                         </div>
-                    </div>
-                    <div class='bdd'>
-                        <h3>Base de donées</h3>
-                        <div class='icons'>
-                            <img src='/assets/img-stack/mongodb.svg' alt='Stack' />
-                            <img src='/assets/img-stack/mysql.svg' alt='Stack' />
-                        </div>
-                    </div>
-                    <div class='divers'>
-                        <h3>Divers</h3>
-                        <div class='icons'>
-                            <img src='/assets/img-stack/docker.png' alt='Stack' />
-                            <img src='/assets/img-stack/git.svg' alt='Stack' />
-                            <img src='/assets/img-stack/fedora.png' alt='Stack' id='fedora' />
-                            <img src='/assets/img-stack/github.svg' alt='Stack' id='github' />
-                            <img src='/assets/img-stack/redux.svg' alt='Stack' />
+                        <div class='divers'>
+                            <h3>Divers</h3>
+                            <div class='icons'>
+                                <img src='/assets/img-stack/git.svg' alt='Stack' />
+                                <img src='/assets/img-stack/github.svg' alt='Stack' id='github' />
+                                <img src='/assets/img-stack/docker.png' alt='Stack' />
+                                <img src='/assets/img-stack/fedora.png' alt='Stack' id='fedora' />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section> -->
+            </section>
         </main>
 
         <ContactCTA />
@@ -106,34 +117,69 @@ const t = useTranslations(lang);
 </BaseLayout>
 
 <style>
-    #stacks {
-        visibility: hidden;
-    }
     .container {
         display: flex;
-        border: 1px solid yellow;
+        flex-direction: column;
+        gap: 40px;
         justify-content: space-between;
+    }
+    .top,
+    .bottom {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .front,
+    .back,
+    .divers,
+    .bdd {
+        width: 50%;
+    }
+    .front {
+        width: 70%;
+        flex-wrap: wrap;
+    }
+    .back {
+        width: 30%;
     }
     .icons {
         display: flex;
-        /* flex-wrap: wrap; */
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
     }
-    .icons img {
-        border: 1px solid red;
+
+    @media screen and (max-width: 990px) {
+        .top,
+        .bottom {
+            flex-direction: column;
+            align-items: center;
+        }
+        .front,
+        .back {
+            margin-top: 40px;
+            width: 100%;
+        }
+        .divers {
+            width: 70%;
+        }
+        .icons {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
     }
+
     #node {
         width: 70px;
     }
     #express {
-        /* fill: green; */
         background-color: white;
         padding: 4px;
         width: 100px;
     }
     #astro {
         width: 145px;
+        background-color: black;
     }
     #fedora {
         width: 140px;
@@ -141,18 +187,14 @@ const t = useTranslations(lang);
     }
     #github {
         background-color: white;
+        border-radius: 50%;
     }
     h3 {
         font-size: var(--text-lg);
-        border: 1px solid blue;
         text-align: center;
         margin-bottom: 10px;
     }
-    .content div {
-        /* display: flex; */
-        /* flex-direction: column; */
-        /* justify-content: center; */
-    }
+
     section img {
         width: 40px;
     }

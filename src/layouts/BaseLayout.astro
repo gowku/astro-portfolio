@@ -136,6 +136,8 @@ const lang = getLangFromUrl(Astro.url);
             swup.on('pageView', () => {
                 activeLink();
                 cardAnimation();
+                //delete the second children of the menu button
+                const menuButtons = document.querySelector('menu-button').children[2].remove();
             });
 
             activeLink();
