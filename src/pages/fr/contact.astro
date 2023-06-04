@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Form } from '../../components/Form';
 import Hero from '../../components/Hero.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import '../../styles/form.css';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

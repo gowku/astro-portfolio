@@ -124,9 +124,8 @@ const lang = getLangFromUrl(Astro.url);
             import { activeLink } from '../script/activeLink.js';
 
             const swup = new Swup({
-                // cache: true,
                 plugins: [
-                    new SwupHeadPlugin(),
+                    new SwupHeadPlugin({}),
                     new SwupBodyClassPlugin(),
                     new SwupScriptsPlugin({ head: true, body: true, optin: false }),
                     // new SwupFadeTheme()
