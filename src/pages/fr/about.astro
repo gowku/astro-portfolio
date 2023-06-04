@@ -11,10 +11,17 @@ const t = useTranslations(lang);
 ---
 
 <BaseLayout title={t('about.title')} description={t('about.description')}>
-    <div class='stack gap-20'>
+    <div id='swup' class='stack gap-20'>
         <main class='wrapper about'>
             <Hero title={t('about.hero.title')} tagline={t('about.hero.tagline')}>
-                <img class='avatar' width='1553' height='873' src='/assets/jufrbt.webp' alt='Julien Frébet' />
+                <img
+                    class='avatar'
+                    width='1553'
+                    height='873'
+                    src='/assets/jufrbt.webp'
+                    alt='Julien Frébet'
+                    loading='lazy'
+                />
                 <div class='CTA-download'>
                     <CallToAction href='/assets/CV_JULIEN_FREBET.pdf'>{t('about.CTA')}</CallToAction>
                 </div>
@@ -58,7 +65,7 @@ const t = useTranslations(lang);
                     <p>{t('about.skills.p')}</p>
                 </div>
             </section>
-            <section id='stacks'>
+            <!-- <section id='stacks'>
                 <h2 class='section-title'>Stack</h2>
                 <div class='content container'>
                     <div class='front'>
@@ -98,7 +105,7 @@ const t = useTranslations(lang);
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
         </main>
 
         <ContactCTA />

@@ -9,10 +9,12 @@ const t = useTranslations(lang);
 ---
 
 <BaseLayout title='Contact | Julien Frébet' description='Contact Julien Frébet'>
-    <Hero title={t('contact.hero.title')} tagline={t('contact.hero.tagline')} />
+    <div id='swup'>
+        <Hero title={t('contact.hero.title')} tagline={t('contact.hero.tagline')} />
 
-    <div class='container'>
-        <Form client:only='react' />
+        <div class='container'>
+            <Form client:only='react' />
+        </div>
     </div>
 </BaseLayout>
 

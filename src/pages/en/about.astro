@@ -11,7 +11,7 @@ const t = useTranslations(lang);
 ---
 
 <BaseLayout title={t('about.title')} description={t('about.description')}>
-    <div class='stack gap-20'>
+    <div id='swup' class='stack gap-20'>
         <main class='wrapper about'>
             <Hero title={t('about.hero.title')} tagline={t('about.hero.tagline')}>
                 <img class='avatar' width='1553' height='873' src='/assets/jufrbt.webp' alt='Julien Frébet' />
@@ -58,6 +58,47 @@ const t = useTranslations(lang);
                     <p>{t('about.skills.p')}</p>
                 </div>
             </section>
+            <!-- <section id='stacks'>
+                <h2 class='section-title'>Stack</h2>
+                <div class='content container'>
+                    <div class='front'>
+                        <h3>Frontend</h3>
+                        <div class='icons'>
+                            <img src='/assets/img-stack/css3.svg' alt='Stack' />
+                            <img src='/assets/img-stack/html5.svg' alt='Stack' />
+                            <img src='/assets/img-stack/javascript.svg' alt='Stack' />
+                            <img src='/assets/img-stack/react.svg' alt='Stack' />
+                            <img src='/assets/img-stack/sass.svg' alt='Stack' />
+                            <img src='/assets/img-stack/typescript.svg' alt='Stack' />
+                            <img src='/assets/img-stack/astro-logo-light.svg' id='astro' alt='Stack' />
+                        </div>
+                    </div>
+                    <div class='back'>
+                        <h3>Backend</h3>
+                        <div class='icons'>
+                            <img src='/assets/img-stack/nodejs.svg' alt='Stack' id='node' />
+                            <img src='/assets/img-stack/express.svg' alt='Stack' id='express' />
+                        </div>
+                    </div>
+                    <div class='bdd'>
+                        <h3>Base de donées</h3>
+                        <div class='icons'>
+                            <img src='/assets/img-stack/mongodb.svg' alt='Stack' />
+                            <img src='/assets/img-stack/mysql.svg' alt='Stack' />
+                        </div>
+                    </div>
+                    <div class='divers'>
+                        <h3>Divers</h3>
+                        <div class='icons'>
+                            <img src='/assets/img-stack/docker.png' alt='Stack' />
+                            <img src='/assets/img-stack/git.svg' alt='Stack' />
+                            <img src='/assets/img-stack/fedora.png' alt='Stack' id='fedora' />
+                            <img src='/assets/img-stack/github.svg' alt='Stack' id='github' />
+                            <img src='/assets/img-stack/redux.svg' alt='Stack' />
+                        </div>
+                    </div>
+                </div>
+            </section> -->
         </main>
 
         <ContactCTA />
@@ -65,6 +106,56 @@ const t = useTranslations(lang);
 </BaseLayout>
 
 <style>
+    #stacks {
+        visibility: hidden;
+    }
+    .container {
+        display: flex;
+        border: 1px solid yellow;
+        justify-content: space-between;
+    }
+    .icons {
+        display: flex;
+        /* flex-wrap: wrap; */
+        justify-content: center;
+        align-items: center;
+    }
+    .icons img {
+        border: 1px solid red;
+    }
+    #node {
+        width: 70px;
+    }
+    #express {
+        /* fill: green; */
+        background-color: white;
+        padding: 4px;
+        width: 100px;
+    }
+    #astro {
+        width: 145px;
+    }
+    #fedora {
+        width: 140px;
+        object-fit: cover;
+    }
+    #github {
+        background-color: white;
+    }
+    h3 {
+        font-size: var(--text-lg);
+        border: 1px solid blue;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .content div {
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* justify-content: center; */
+    }
+    section img {
+        width: 40px;
+    }
     .CTA-download {
         display: flex;
         justify-content: flex-end;
@@ -79,7 +170,7 @@ const t = useTranslations(lang);
         gap: 3.5rem;
     }
 
-    img {
+    .avatar {
         margin-top: 1.5rem;
         border-radius: 1.5rem;
         box-shadow: var(--shadow-md);

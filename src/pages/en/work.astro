@@ -10,6 +10,7 @@ import Grid from '../../components/Grid.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import Icon from '../../components/Icon.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import '../../styles/animWork.scss';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -22,7 +23,7 @@ const projects = (
 ---
 
 <BaseLayout title={t('work.title')} description={t('work.description')}>
-    <div class='stack gap-20'>
+    <div id='swup' class='stack gap-20'>
         <main class='wrapper stack gap-8'>
             <Hero title={t('work.hero.title')} tagline={t('work.hero.tagline')} align='start'>
                 <div class='about'>
@@ -45,8 +46,6 @@ const projects = (
         <ContactCTA />
     </div>
 </BaseLayout>
-
-<script src='../../script/3dHover.ts'></script>
 
 <style>
     .projects {

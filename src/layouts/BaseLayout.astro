@@ -16,9 +16,13 @@ interface Props {
 const { title, description } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
+// <script>
+//     // Add “loaded” class once the document has completely loaded.
+//     addEventListener('load', () => document.documentElement.classList.add('loaded'));
+// </script>
 ---
 
-<html lang={lang}>
+<html lang={lang} class='loaded'>
     <head>
         <MainHead title={title} description={description} />
     </head>
@@ -29,12 +33,8 @@ const lang = getLangFromUrl(Astro.url);
             <Footer />
         </div>
 
-        <script>
-            // Add “loaded” class once the document has completely loaded.
-            addEventListener('load', () => document.documentElement.classList.add('loaded'));
-        </script>
-
         <style>
+            /* ERROR BECAUSE OF THE SWUP SCRIPT  */
             :root {
                 --_placeholder-bg: linear-gradient(transparent, transparent);
                 --bg-image-main: url('/assets/backgrounds/bg-main-light-800w.webp');
@@ -112,5 +112,35 @@ const lang = getLangFromUrl(Astro.url);
                 }
             }
         </style>
+
+        <script>
+            import Swup from 'swup';
+            import SwupHeadPlugin from '@swup/head-plugin';
+            import SwupBodyClassPlugin from '@swup/body-class-plugin';
+            import SwupScriptsPlugin from '@swup/scripts-plugin';
+            import SwupSlideTheme from '@swup/slide-theme';
+            import SwupFadeTheme from '@swup/fade-theme';
+            import { cardAnimation } from '../script/3dHover.ts';
+            import { activeLink } from '../script/activeLink.js';
+
+            const swup = new Swup({
+                // cache: true,
+                plugins: [
+                    new SwupHeadPlugin(),
+                    new SwupBodyClassPlugin(),
+                    new SwupScriptsPlugin({ head: true, body: true, optin: false }),
+                    // new SwupFadeTheme()
+                    new SwupSlideTheme()
+                ]
+            });
+
+            swup.on('pageView', () => {
+                activeLink();
+                cardAnimation();
+            });
+
+            activeLink();
+            cardAnimation();
+        </script>
     </body>
 </html>
