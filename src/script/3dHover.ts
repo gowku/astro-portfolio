@@ -17,10 +17,12 @@ export const cardAnimation = () => {
       let angleX = (midCardHeight - y) / 20
 
       cardFront.style.transform = `rotateY(${angleY}deg) rotateX(${angleX}deg) scale(1.05) `
+      cardFront.style.transition = `transform 0.25s `
     })
 
     el.addEventListener('mouseleave', (e: any) => {
       cardFront.style.transform = `rotateY(0deg) rotateX(0deg)`
+      cardFront.style.transition = `transform 0.25s `
     })
   })
 }

@@ -26,7 +26,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 ];
 ---
 
-<nav id='swup'>
+<nav id='nav'>
     <div class='menu-header'>
         <a href={`/${lang}/`} class='site-title'>
             <Icon icon='terminal-window' color='var(--accent-regular)' size='1.6em' gradient />
@@ -260,7 +260,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
     }
 
     .menu-button {
-        position: relative;
+        // position: relative;
         display: flex;
         border: 0;
         border-radius: 999rem;
@@ -270,6 +270,13 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
         background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
         box-shadow: var(--shadow-md);
         z-index: 1;
+    }
+
+    menu-button .menu-button {
+        position: fixed;
+        top: 23px; /* Adjust the value as per your preference */
+        right: 42px; /* Adjust the value as per your preference */
+        z-index: 9999;
     }
 
     .menu-button[aria-expanded='true'] {
@@ -288,7 +295,8 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
     }
 
     #menu-content {
-        position: absolute;
+        // position: absolute;
+        position: fixed;
         left: 0;
         right: 0;
     }

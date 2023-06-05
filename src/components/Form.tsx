@@ -41,11 +41,13 @@ export const Form = () => {
     <form ref={form} onSubmit={sendEmail}>
       <div className="field">
         <label htmlFor="username">
-          {t('form.fullName')}
+          {/* {t('form.fullName')} */}
+          Nom :
           <input
             id="username"
             type="text"
-            placeholder={t('form.username.placeHolder')}
+            // placeholder={t('form.username.placeHolder')}
+            placeholder="Nom"
             name="user_name"
             onChange={onChangeHandler}
             minLength="3"
@@ -73,7 +75,8 @@ export const Form = () => {
           Message :
           <textarea
             id="message"
-            placeholder={t('form.message')}
+            // placeholder={t('form.message')}
+            placeholder="Message ..."
             required
             name="message"
             minLength="3"
