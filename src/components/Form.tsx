@@ -3,10 +3,8 @@ import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { useTranslations } from '../i18n/utils'
 
-const lang = window.location.href.split('/')[3]
-const t = useTranslations(lang)
-
-export const Form = () => {
+export const Form = ({ lang }: string) => {
+  const t = useTranslations(lang)
   const form = useRef(null)
 
   const sendEmail = (e) => {
@@ -41,13 +39,13 @@ export const Form = () => {
     <form ref={form} onSubmit={sendEmail}>
       <div className="field">
         <label htmlFor="username">
-          {/* {t('form.fullName')} */}
-          Nom :
+          {t('form.fullName')}
+          {/* Nom : */}
           <input
             id="username"
             type="text"
-            // placeholder={t('form.username.placeHolder')}
-            placeholder="Nom"
+            placeholder={t('form.username.placeHolder')}
+            // placeholder="Nom"
             name="user_name"
             onChange={onChangeHandler}
             minLength="3"
@@ -75,8 +73,8 @@ export const Form = () => {
           Message :
           <textarea
             id="message"
-            // placeholder={t('form.message')}
-            placeholder="Message ..."
+            placeholder={t('form.message')}
+            // placeholder="Message ..."
             required
             name="message"
             minLength="3"

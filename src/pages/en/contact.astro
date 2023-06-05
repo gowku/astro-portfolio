@@ -14,7 +14,7 @@ const t = useTranslations(lang);
         <Hero title={t('contact.hero.title')} tagline={t('contact.hero.tagline')} />
 
         <div class='container'>
-            <Form client:only='react' />
+            <Form client:load lang={lang} />
         </div>
     </div>
 </BaseLayout>
