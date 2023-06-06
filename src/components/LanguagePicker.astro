@@ -21,7 +21,7 @@ const pathName = Astro.url.pathname.split('/')[2];
                         }
                     ]}
                     href={`/${lang}/${pathName}`}>
-                    {lang}
+                    <img src={`/assets/flag/${lang}.svg`} alt={`drapeau ${lang}`} />
                 </a>
                 {index !== 1 && <span class='slash'>/</span>}
             </>
@@ -37,22 +37,25 @@ const pathName = Astro.url.pathname.split('/')[2];
         color: var(--accent-dark);
         height: 100%;
         .item {
-            text-transform: capitalize;
-            text-decoration: none;
-            font-size: var(--text-base);
-            height: 100%;
             display: flex;
             align-items: center;
+            img {
+                width: 25px;
+                min-width: 25px;
+            }
         }
         .item:hover {
-            color: var(--accent-text-over);
+            cursor: pointer;
         }
 
         .slash {
             margin: 0 5px;
         }
         .active {
-            font-size: var(--text-lg);
+            img {
+                width: 38px;
+                min-width: 38px;
+            }
         }
     }
 </style>

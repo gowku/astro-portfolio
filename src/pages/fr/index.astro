@@ -61,7 +61,14 @@ const projects = (
                     </div>
                 </Hero>
 
-                <img class='avatar' alt='Julien Frébet' width='480' height='620' src='/assets/jufrbt.webp' />
+                <img
+                    class='avatar'
+                    alt='Julien Frébet'
+                    width='480'
+                    height='620'
+                    src='/assets/jufrbt.webp'
+                    fetchpriority='high'
+                />
             </header>
 
             <Skills />
@@ -85,7 +92,7 @@ const projects = (
                     <Grid variant='offset'>
                         {
                             projects.map((project) => (
-                                <li class='projects'>
+                                <li id='projects'>
                                     <PortfolioPreview project={project} />
                                 </li>
                             ))

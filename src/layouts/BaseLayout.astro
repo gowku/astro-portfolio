@@ -22,7 +22,7 @@ const lang = getLangFromUrl(Astro.url);
 // </script>
 ---
 
-<html lang={lang} class='loaded'>
+<html lang={lang}>
     <head>
         <MainHead title={title} description={description} />
     </head>
@@ -124,7 +124,7 @@ const lang = getLangFromUrl(Astro.url);
             import { activeLink } from '../script/activeLink.js';
 
             const swup = new Swup({
-                containers: ['#swup', '#nav', '#form'],
+                containers: ['#swup', '#nav', '#projects-home', '#projects'],
                 plugins: [
                     new SwupHeadPlugin({}),
                     new SwupBodyClassPlugin(),

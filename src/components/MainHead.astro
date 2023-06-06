@@ -25,6 +25,7 @@ const { title = `${t('mainHead.title')}`, description = `${t('mainHead.descripti
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
 <link
     rel='stylesheet'
+    rel='preload'
     href='https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap'
     media='print'
     onload="this.media='all'"
@@ -33,12 +34,13 @@ const { title = `${t('mainHead.title')}`, description = `${t('mainHead.descripti
     <link
         href='https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap'
         rel='stylesheet'
+        rel='preload'
         type='text/css'
     />
 </noscript>
 
-<!-- <script is:inline> -->
-<script>
+<script is:inline>
+    // <script>
     // This code is inlined in the head to make dark mode instant & blocking.
     const getThemePreference = () => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {

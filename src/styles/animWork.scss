@@ -27,7 +27,8 @@ $animation-delay: 300ms;
   animation: $animation-name $animation-duration linear forwards;
 }
 
-.projects {
+#projects,
+#projects-home {
   &:nth-child(odd) {
     opacity: 0;
     transform: translateX(-100%) translateY(var(--row-offset));

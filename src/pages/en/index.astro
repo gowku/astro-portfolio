@@ -61,7 +61,14 @@ const projects = (
                     </div>
                 </Hero>
 
-                <img class='avatar' alt='Julien Frébet' width='480' height='620' src='/assets/jufrbt.webp' />
+                <img
+                    class='avatar'
+                    alt='Julien Frébet'
+                    width='480'
+                    height='620'
+                    src='/assets/jufrbt.webp'
+                    fetchpriority='high'
+                />
             </header>
 
             <Skills />
@@ -77,7 +84,6 @@ const projects = (
             <section class='section with-background with-cta'>
                 <header class='section-header stack gap-2 lg:gap-4'>
                     <h3>{t('index.h3')}</h3>
-                    <!-- <p>Découvrez mes derniers projets, réalisé pour des clients ou pour moi-même.</p> -->
                     <p>{t('index.p')}</p>
                 </header>
 
@@ -85,7 +91,7 @@ const projects = (
                     <Grid variant='offset'>
                         {
                             projects.map((project) => (
-                                <li class='projects'>
+                                <li id='projects'>
                                     <PortfolioPreview project={project} />
                                 </li>
                             ))
