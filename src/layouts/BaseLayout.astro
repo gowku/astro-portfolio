@@ -114,7 +114,7 @@ const lang = getLangFromUrl(Astro.url);
             }
         </style>
 
-        <!-- <script>
+        <script>
             import Swup from 'swup';
             import SwupHeadPlugin from '@swup/head-plugin';
             import SwupBodyClassPlugin from '@swup/body-class-plugin';
@@ -125,11 +125,11 @@ const lang = getLangFromUrl(Astro.url);
             import { activeLink } from '../script/activeLink.js';
 
             const swup = new Swup({
-                containers: ['#swup', '#nav', '#projects-home', '#projects'],
+                containers: ['#swup', '#nav'],
                 plugins: [
                     new SwupHeadPlugin({}),
                     new SwupBodyClassPlugin(),
-                    new SwupScriptsPlugin({ head: true, body: true, optin: false }),
+                    new SwupScriptsPlugin(),
                     // new SwupFadeTheme()
                     new SwupSlideTheme()
                 ]
@@ -144,6 +144,6 @@ const lang = getLangFromUrl(Astro.url);
 
             activeLink();
             cardAnimation();
-        </script> -->
+        </script>
     </body>
 </html>
