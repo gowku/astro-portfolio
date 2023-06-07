@@ -1,13 +1,15 @@
 // @ts-nocheck
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { useTranslations } from '../i18n/utils'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import Notification from './Notification'
 
 export const Form = ({ lang }: string) => {
   const t = useTranslations(lang)
   const form = useRef(null)
+  const [message, setMessage] = useState('')
+  const [succes, setSucces] = useState(false)
+  const [isShowing, setIsShowing] = useState(false)
 
   const sendEmail = (e) => {
     e.preventDefault()
@@ -21,14 +23,25 @@ export const Form = ({ lang }: string) => {
       )
       .then(
         (result) => {
-          toast.success(t('message.success'))
           form.current.reset()
+          setMessage(t('message.success'))
+          setSucces(true)
+          setIsShowing(true)
         },
         (error) => {
-          toast.error(t('message.error'))
+          setMessage(t('message.error'))
+          setSucces(false)
+          setIsShowing(true)
         }
       )
   }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsShowing(false)
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [isShowing])
 
   const onChangeHandler = (e) => {
     e.preventDefault()
@@ -39,7 +52,7 @@ export const Form = ({ lang }: string) => {
 
   return (
     <>
-      <ToastContainer />
+      {isShowing && <Notification message={message} succes={succes} />}
       <form ref={form} onSubmit={sendEmail}>
         <div className="field">
           <label htmlFor="username">

@@ -1,0 +1,69 @@
+.notification {
+  position: fixed;
+  top: 0;
+  right: 20px;
+  height: 8%;
+  width: 25%;
+  background-color: #c1f7ee;
+  margin-top: 5%;
+  margin-left: 76%;
+  transform-origin: right;
+  animation: notify 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+.identifier {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-top: 5.5px;
+  margin-left: 7.5px;
+  animation: fade-in 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+.succes {
+  background-color: green;
+}
+
+.error {
+  background-color: red;
+}
+
+.text {
+  position: absolute;
+  color: #090b11;
+  margin-top: 8px;
+  margin-left: 40px;
+  animation: fade-in 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes notify {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  80% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
