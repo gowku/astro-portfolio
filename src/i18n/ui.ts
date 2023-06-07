@@ -42,6 +42,8 @@ export const ui = {
     //pages/Contact
     'contact.hero.title': `Contact Informations`,
     'contact.hero.tagline': `Don't hesitate to contact me for any questions or requests for quotes.`,
+    'message.error': 'An error has occurred, please try again later.',
+    'message.success': 'Your message has been sent successfully.',
     //pages/Index
     'index.hero.title': `Hello, I'm Julien Frébet`,
     'index.hero.tagline': `Front-end developer.`,
@@ -107,6 +109,8 @@ export const ui = {
     //pages/contact
     'contact.hero.title': 'Informations de contact',
     'contact.hero.tagline': `N'hésitez pas à me contacter pour toute question ou demande de devis.`,
+    'message.error': 'Une erreur est survenue, veuillez réessayer plus tard.',
+    'message.success': 'Votre message a été envoyé avec succès.',
     //pages/Index
     'index.hero.title': `Bonjour, je suis Julien Frébet`,
     'index.hero.tagline': `Développeur Front-end`,
