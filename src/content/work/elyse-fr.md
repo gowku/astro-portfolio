@@ -13,10 +13,22 @@ tags:
 
 ### DESCRIPTION
 
-Donow est une ESN Lyonnaise, ils ont pour ambition de développer une application web/mobile de satisfaction clients.
-J'ai rejoint le projet en tant que développeur frontend junior, cette équipe est composée d'un expert
-frontend qui encadre l'intégralité des développements et également d'un expert DevOps qui gère
-quand à lui la partie infrastructure. Le projet suit la methodologie SCRUM.
+Donow est une entreprise de services numériques (ESN) basée à Lyon. Leur objectif ambitieux est
+de développer une application web/mobile de satisfaction client.
+
+En tant que développeur frontend, j'ai eu l'opportunité de rejoindre ce projet passionnant.
+Notre équipe est composée d'un expert frontend expérimenté, qui encadre l'ensemble des développements,
+ainsi que d'un expert DevOps talentueux, responsable de la gestion de l'infrastructure.
+Pour assurer une méthodologie de travail efficace, nous suivons la méthodologie SCRUM,
+qui favorise la collaboration et la livraison itérative.
+
+Chaque semaine, nous organisons un rendez-vous avec l'équipe pour discuter des améliorations
+potentielles et des nouvelles fonctionnalités à intégrer dans l'application. Ces échanges
+stimulants nous permettent de partager des idées, de résoudre des problèmes et d'explorer des
+opportunités d'innovation.
+
+Cela renforce notre cohésion en tant qu'équipe et nous permet de maintenir notre objectif commun :
+créer une expérience utilisateur exceptionnelle pour nos clients.
 
 ### CONTEXTE DE MISSION
 

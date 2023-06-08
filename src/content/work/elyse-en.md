@@ -13,7 +13,13 @@ tags:
 
 ### DESCRIPTION
 
-Donow is a Lyon-based IT services company with the ambition to develop a web/mobile application for customer satisfaction. I joined the project as a junior frontend developer. This team consists of an expert frontend developer who oversees all the development work and a DevOps expert who manages the infrastructure. The project follows the SCRUM methodology.
+Donow is a Lyon-based digital services company. Their ambitious goal is to develop a web/mobile application for customer satisfaction.
+
+As a frontend developer, I had the opportunity to join this exciting project. Our team consists of an experienced frontend expert who oversees all developments, as well as a talented DevOps expert responsible for infrastructure management. To ensure an efficient working methodology, we follow the SCRUM methodology, which promotes collaboration and iterative delivery.
+
+Every week, we organize a meeting with the team to discuss potential improvements and new features to be integrated into the application. These stimulating exchanges allow us to share ideas, solve problems, and explore innovation opportunities.
+
+This strengthens our cohesion as a team and enables us to maintain our common objective: creating an exceptional user experience for our clients.
 
 ### MISSION CONTEXT
 
