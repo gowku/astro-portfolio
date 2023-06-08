@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "test": "vitest",
     "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\""
   },
   "dependencies": {
@@ -40,6 +41,7 @@
     "prettier": "^2.8.8",
     "prettier-config-standard": "^5.0.0",
     "prettier-plugin-astro": "^0.9.1",
-    "swup": "^3.0.7"
+    "swup": "^3.0.7",
+    "vitest": "^0.32.0"
   }
 }
