@@ -93,7 +93,7 @@ export const ui = {
     'about.title': 'À propos | Julien Frébet',
     'about.description': 'À propos de Julien Frébet',
     'about.hero.title': 'À propos',
-    'about.hero.tagline': 'Découvrez mon parcours et mes compétances.',
+    'about.hero.tagline': 'Découvrez mon parcours et mes compétences.',
     'about.CTA': 'Télécharger mon CV',
     'about.p[1]': `Mon intérêt profond pour l'informatique a été le moteur de ma reconversion professionnelle dans le développement
     web en tant que freelance, après avoir quitté mon dernier emploi`,
