@@ -33,7 +33,7 @@ export const ui = {
     'about.hero.title': 'About',
     'about.hero.tagline': 'Discover my background and skills.',
     'about.CTA': 'Download my CV',
-    'about.p[1]': `My deep interest in IT was the driving force behind my professional retraining in web development as a freelance, after leaving my last job`,
+    'about.p[1]': `My deep interest in IT was the driving force behind my professional retraining in web development after leaving my last job`,
     'about.p[2]': `My two demanding training courses pushed me to learn by myself, thus strengthening my knowledge and autonomy in my skills development`,
     'about.p[3]': `Every day, I keep myself informed of technological advances in the fields that interest me, especially in the JavaScript ecosystem and more specifically ReactJs. My previous professional experience taught me the importance of autonomy, rigor and adaptability to provide quality work, whatever the circumstances.`,
     'about.h2': 'Degrees',
@@ -96,7 +96,7 @@ export const ui = {
     'about.hero.tagline': 'Découvrez mon parcours et mes compétences.',
     'about.CTA': 'Télécharger mon CV',
     'about.p[1]': `Mon intérêt profond pour l'informatique a été le moteur de ma reconversion professionnelle dans le développement
-    web en tant que freelance, après avoir quitté mon dernier emploi`,
+    web après avoir quitté mon dernier emploi`,
     'about.p[2]': `Mes deux formations exigeantes m'ont poussé à apprendre par moi-même, renforçant ainsi mes connaissances et mon
     autonomie dans ma montée en compétence`,
     'about.p[3]': `Chaque jour, je me tiens informé des avancées technologiques dans les domaines qui me passionnent, en particulier
